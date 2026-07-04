@@ -628,42 +628,95 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Why Choose Us */}
-      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto space-y-16">
-        <div className="text-center space-y-4 max-w-xl mx-auto">
-          <span className="text-gold-600 font-sans text-xs md:text-sm uppercase tracking-widest font-bold block">
-            The Haveli Distinction
-          </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-semibold text-emerald-800 leading-tight">
-            Why Choose Jharokha Haveli
-          </h2>
-          <div className="w-16 h-[2px] bg-gold-400 mx-auto" />
-        </div>
+      {/* 7. Why Choose Us - Creative Section */}
+      <section className="relative py-32 px-6 md:px-12 bg-white overflow-hidden">
+        {/* Animated fluid shapes in background */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-fuchsia-500/5 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 translate-y-1/3" />
+        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              icon: <FaMapMarkedAlt className="w-8 h-8 text-gold-500" />,
-              title: 'Prime Lakeside Location',
-              desc: 'Steps away from Amrai Ghat and Chandpole. Panoramic views of historic city palaces directly from our decks.'
-            },
-            {
-              icon: <FaCrown className="w-8 h-8 text-gold-500" />,
-              title: 'Heritage Architectural Beauty',
-              desc: 'Authentic stone carvings, traditional archways, and window frame seating that captures Udaipur’s essence.'
-            },
-            {
-              icon: <FaUtensils className="w-8 h-8 text-gold-500" />,
-              title: 'Award-Winning Gastronomy',
-              desc: 'Savor traditional recipes and modern flavors on our open terrace under the stars, looking at glowing lake waters.'
-            }
-          ].map((item, idx) => (
-            <GlassCard key={item.title} delay={idx * 0.15}>
-              <div className="mb-6 bg-gold-50 inline-block p-4 rounded-xl border border-gold-100">{item.icon}</div>
-              <h3 className="font-serif text-xl font-bold text-emerald-950 mb-3">{item.title}</h3>
-              <p className="font-sans text-dark-900/80 text-sm leading-relaxed">{item.desc}</p>
-            </GlassCard>
-          ))}
+        <div className="max-w-7xl mx-auto space-y-20 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center space-y-6 max-w-2xl mx-auto"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full border border-emerald-800/20 bg-emerald-50 text-emerald-800 font-sans text-xs uppercase tracking-widest font-bold shadow-sm">
+              The Haveli Distinction
+            </span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-950 leading-tight">
+              Why Choose <span className="text-gold-600 italic font-light">Jharokha</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            {[
+              {
+                icon: FaMapMarkedAlt,
+                title: 'Prime Lakeside Location',
+                desc: 'Steps away from Amrai Ghat and Chandpole. Panoramic views of historic city palaces directly from our decks.',
+                theme: {
+                  bg: 'bg-cyan-500/5 hover:bg-cyan-50',
+                  border: 'border-cyan-500/20 hover:border-cyan-400',
+                  iconBox: 'bg-gradient-to-br from-cyan-400 to-blue-600',
+                  iconColor: 'text-white',
+                  title: 'group-hover:text-cyan-700',
+                  shadow: 'hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.3)]',
+                }
+              },
+              {
+                icon: FaCrown,
+                title: 'Heritage Architecture',
+                desc: 'Authentic stone carvings, traditional archways, and window frame seating that captures Udaipur’s royal essence.',
+                theme: {
+                  bg: 'bg-fuchsia-500/5 hover:bg-fuchsia-50',
+                  border: 'border-fuchsia-500/20 hover:border-fuchsia-400',
+                  iconBox: 'bg-gradient-to-br from-fuchsia-400 to-purple-600',
+                  iconColor: 'text-white',
+                  title: 'group-hover:text-fuchsia-700',
+                  shadow: 'hover:shadow-[0_20px_40px_-15px_rgba(217,70,239,0.3)]',
+                }
+              },
+              {
+                icon: FaUtensils,
+                title: 'Award-Winning Gastronomy',
+                desc: 'Savor traditional recipes and modern flavors on our open terrace under the stars, looking at glowing lake waters.',
+                theme: {
+                  bg: 'bg-amber-500/5 hover:bg-amber-50',
+                  border: 'border-amber-500/20 hover:border-amber-400',
+                  iconBox: 'bg-gradient-to-br from-amber-400 to-orange-500',
+                  iconColor: 'text-white',
+                  title: 'group-hover:text-amber-700',
+                  shadow: 'hover:shadow-[0_20px_40px_-15px_rgba(245,158,11,0.3)]',
+                }
+              }
+            ].map((item, idx) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: idx * 0.2, type: 'spring' }}
+                className={`group relative rounded-[2rem] p-8 md:p-10 border transition-all duration-500 ${item.theme.bg} ${item.theme.border} ${item.theme.shadow} overflow-hidden backdrop-blur-sm flex flex-col`}
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                
+                <div className={`w-20 h-20 mb-8 rounded-2xl ${item.theme.iconBox} shadow-lg flex items-center justify-center transform group-hover:-translate-y-2 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+                  <item.icon className={`w-10 h-10 ${item.theme.iconColor} drop-shadow-md`} />
+                </div>
+                
+                <h3 className={`font-serif text-2xl md:text-3xl font-bold text-emerald-950 mb-4 transition-colors duration-300 ${item.theme.title}`}>
+                  {item.title}
+                </h3>
+                
+                <p className="font-sans text-dark-900/70 text-base leading-relaxed mt-auto group-hover:text-dark-900 transition-colors duration-300">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
