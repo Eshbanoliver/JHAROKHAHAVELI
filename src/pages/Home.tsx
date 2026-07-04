@@ -513,53 +513,115 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Core Values */}
-      <section className="py-20 px-6 md:px-12 bg-white/40">
-        <div className="max-w-7xl mx-auto space-y-12">
-          <div className="text-center space-y-4">
-            <span className="text-gold-600 font-sans text-xs md:text-sm uppercase tracking-widest font-bold block">
+      {/* 6. Core Values - Creative Section */}
+      <section className="relative py-28 px-6 md:px-12 bg-emerald-950 overflow-hidden border-t border-gold-900/30">
+        {/* Animated Background Mesh */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-gold-600 rounded-full blur-[120px] mix-blend-overlay animate-pulse" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-500 rounded-full blur-[120px] mix-blend-overlay animate-pulse" style={{ animationDelay: '2s' }} />
+          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay pointer-events-none" />
+        </div>
+
+        <div className="max-w-7xl mx-auto space-y-16 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center space-y-6 max-w-2xl mx-auto"
+          >
+            <span className="inline-block px-5 py-2 rounded-full border border-gold-500/30 bg-gold-500/10 text-gold-400 font-sans text-xs md:text-sm uppercase tracking-widest font-bold backdrop-blur-sm">
               Our Foundation
             </span>
-            <h2 className="font-serif text-2xl md:text-4xl font-semibold text-emerald-800">
+            <h2 className="font-serif text-4xl md:text-5xl font-semibold text-white">
               Core Values We Cherish
             </h2>
-            <div className="w-12 h-[2px] bg-gold-400 mx-auto mt-3" />
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               {
-                icon: <FaHistory className="w-6 h-6 text-gold-500" />,
+                icon: FaHistory,
                 title: 'Royal Heritage',
-                desc: 'Preserving authentic Rajasthani patterns, architectural carvings, and old city customs.'
+                desc: 'Preserving authentic Rajasthani patterns, architectural carvings, and old city customs.',
+                theme: {
+                  glow: 'group-hover:from-rose-500/20 group-hover:to-transparent',
+                  iconBg: 'from-rose-500/20 to-rose-900/50',
+                  iconText: 'text-rose-400 group-hover:text-rose-300',
+                  border: 'border-rose-500/30 group-hover:border-rose-400',
+                  shadow: 'hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.3)]',
+                  titleHover: 'group-hover:text-rose-300',
+                  divider: 'bg-rose-500/30 group-hover:bg-rose-400',
+                }
               },
               {
-                icon: <FaAward className="w-6 h-6 text-gold-500" />,
+                icon: FaAward,
                 title: 'Uncompromised Quality',
-                desc: 'Delivering fresh culinary ingredients and spotless premium room sanitization.'
+                desc: 'Delivering fresh culinary ingredients and spotless premium room sanitization.',
+                theme: {
+                  glow: 'group-hover:from-blue-500/20 group-hover:to-transparent',
+                  iconBg: 'from-blue-500/20 to-blue-900/50',
+                  iconText: 'text-blue-400 group-hover:text-blue-300',
+                  border: 'border-blue-500/30 group-hover:border-blue-400',
+                  shadow: 'hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.3)]',
+                  titleHover: 'group-hover:text-blue-300',
+                  divider: 'bg-blue-500/30 group-hover:bg-blue-400',
+                }
               },
               {
-                icon: <FaShieldAlt className="w-6 h-6 text-gold-500" />,
+                icon: FaShieldAlt,
                 title: 'Guest Centricity',
-                desc: 'Anticipating guest requirements and greeting everyone with warmth and care.'
+                desc: 'Anticipating guest requirements and greeting everyone with warmth and care.',
+                theme: {
+                  glow: 'group-hover:from-purple-500/20 group-hover:to-transparent',
+                  iconBg: 'from-purple-500/20 to-purple-900/50',
+                  iconText: 'text-purple-400 group-hover:text-purple-300',
+                  border: 'border-purple-500/30 group-hover:border-purple-400',
+                  shadow: 'hover:shadow-[0_20px_40px_-15px_rgba(168,85,247,0.3)]',
+                  titleHover: 'group-hover:text-purple-300',
+                  divider: 'bg-purple-500/30 group-hover:bg-purple-400',
+                }
               },
               {
-                icon: <FaGlassCheers className="w-6 h-6 text-gold-500" />,
+                icon: FaGlassCheers,
                 title: 'Serene Luxury',
-                desc: 'Creating an atmosphere of peace and relaxation away from daily noise.'
+                desc: 'Creating an atmosphere of peace and relaxation away from daily noise.',
+                theme: {
+                  glow: 'group-hover:from-teal-500/20 group-hover:to-transparent',
+                  iconBg: 'from-teal-500/20 to-teal-900/50',
+                  iconText: 'text-teal-400 group-hover:text-teal-300',
+                  border: 'border-teal-500/30 group-hover:border-teal-400',
+                  shadow: 'hover:shadow-[0_20px_40px_-15px_rgba(20,184,166,0.3)]',
+                  titleHover: 'group-hover:text-teal-300',
+                  divider: 'bg-teal-500/30 group-hover:bg-teal-400',
+                }
               }
             ].map((value, idx) => (
               <motion.div
                 key={value.title}
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-white/60 backdrop-blur border border-beige-200 rounded-xl p-6 hover:shadow-md transition-shadow"
+                transition={{ duration: 0.8, delay: idx * 0.15, type: 'spring' }}
+                className={`group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col ${value.theme.shadow}`}
               >
-                <div className="mb-4 bg-beige-100 inline-block p-3 rounded-lg">{value.icon}</div>
-                <h4 className="font-serif text-lg font-bold text-emerald-950 mb-2">{value.title}</h4>
-                <p className="font-sans text-xs md:text-sm text-dark-900/75 leading-relaxed">{value.desc}</p>
+                {/* Glow effect on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br from-transparent to-transparent transition-all duration-500 ${value.theme.glow}`} />
+                
+                <div className="relative z-10 flex flex-col flex-grow">
+                  <div className={`w-16 h-16 mb-8 rounded-2xl bg-gradient-to-br border flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-inner ${value.theme.iconBg} ${value.theme.border}`}>
+                    <value.icon className={`w-7 h-7 transition-colors ${value.theme.iconText}`} />
+                  </div>
+                  
+                  <h4 className={`font-serif text-2xl font-bold text-white mb-4 transition-colors ${value.theme.titleHover}`}>
+                    {value.title}
+                  </h4>
+                  <div className={`w-8 h-[2px] mb-5 group-hover:w-16 transition-all duration-500 ${value.theme.divider}`} />
+                  
+                  <p className="font-sans text-sm text-beige-300/70 leading-relaxed font-light group-hover:text-beige-200/90 transition-colors mt-auto">
+                    {value.desc}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
