@@ -60,7 +60,7 @@ export default function App() {
       <ScrollToTop />
       
       {/* Page layout wrapper */}
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen overflow-x-hidden">
         <Navbar />
         
         {/* Dynamic page routes with code splitting */}

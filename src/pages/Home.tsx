@@ -10,7 +10,9 @@ import {
   FaShieldAlt, 
   FaGlassCheers, 
   FaQuoteLeft, 
-  FaStar 
+  FaStar,
+  FaUsers,
+  FaCalendarAlt
 } from 'react-icons/fa';
 import PageLayout from '../layouts/PageLayout';
 import SEO from '../components/SEO';
@@ -137,7 +139,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide text-white drop-shadow-md"
+            className="font-serif text-3xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-wide text-white drop-shadow-md"
           >
             Where Royal Heritage<br />
             Meets Scenic Serenity
@@ -253,47 +255,54 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 3. Some Key Metrics */}
-      <section className="bg-emerald-950 text-white py-16 px-6 md:px-12 border-y border-gold-950 relative overflow-hidden">
+      {/* 3. Key Metrics - Creative Section */}
+      <section className="relative bg-emerald-950 text-white py-20 px-6 md:px-12 border-y border-gold-950/30 overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute top-[-50%] left-[-10%] w-96 h-96 bg-gold-900/20 rounded-full blur-[100px] animate-pulse" />
+        <div className="absolute bottom-[-50%] right-[-10%] w-[500px] h-[500px] bg-emerald-800/30 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
+        
         {/* Decorative gold vector line */}
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold-500/40 to-transparent" />
-        
-        <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 relative z-10">
-          <div className="text-center space-y-2">
-            <p className="text-gold-400 text-3xl md:text-5xl font-bold font-serif flex justify-center items-center">
-              <AnimatedCounter end={15000} suffix="+" />
-            </p>
-            <p className="text-xs md:text-sm text-beige-300/80 uppercase tracking-widest font-semibold font-sans">
-              Happy Guests
-            </p>
-          </div>
-          
-          <div className="text-center space-y-2">
-            <p className="text-gold-400 text-3xl md:text-5xl font-bold font-serif flex justify-center items-center">
-              <AnimatedCounter end={12} suffix="+" />
-            </p>
-            <p className="text-xs md:text-sm text-beige-300/80 uppercase tracking-widest font-semibold font-sans">
-              Years of Hospitality
-            </p>
-          </div>
 
-          <div className="text-center space-y-2">
-            <p className="text-gold-400 text-3xl md:text-5xl font-bold font-serif flex justify-center items-center">
-              <AnimatedCounter end={35} suffix="+" />
-            </p>
-            <p className="text-xs md:text-sm text-beige-300/80 uppercase tracking-widest font-semibold font-sans">
-              Premium Rooms
-            </p>
-          </div>
-
-          <div className="text-center space-y-2">
-            <p className="text-gold-400 text-3xl md:text-5xl font-bold font-serif flex justify-center items-center">
-              <AnimatedCounter end={100} suffix="%" />
-            </p>
-            <p className="text-xs md:text-sm text-beige-300/80 uppercase tracking-widest font-semibold font-sans">
-              Fine Dining Rating
-            </p>
-          </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+          >
+            {[
+              { icon: FaUsers, count: 15000, suffix: '+', label: 'Happy Guests', delay: 0 },
+              { icon: FaCalendarAlt, count: 12, suffix: '+', label: 'Years of Hospitality', delay: 0.2 },
+              { icon: FaBed, count: 35, suffix: '+', label: 'Premium Rooms', delay: 0.4 },
+              { icon: FaStar, count: 100, suffix: '%', label: 'Fine Dining Rating', delay: 0.6 }
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: stat.delay, type: 'spring' }}
+                className="group relative bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl overflow-hidden hover:bg-white/10 hover:border-gold-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.15)] flex flex-col items-center text-center"
+              >
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gold-500/0 via-gold-500/0 to-gold-500/0 group-hover:from-gold-500/5 group-hover:to-transparent transition-all duration-500" />
+                
+                <div className="w-16 h-16 mb-6 rounded-full bg-emerald-900/50 border border-gold-500/30 flex items-center justify-center group-hover:scale-110 group-hover:border-gold-400 transition-all duration-500 shadow-[0_0_15px_rgba(212,175,55,0.1)]">
+                  <stat.icon className="w-7 h-7 text-gold-400 group-hover:text-gold-300 transition-colors" />
+                </div>
+                
+                <p className="text-gold-400 text-3xl md:text-4xl font-bold font-serif flex justify-center items-center mb-3">
+                  <AnimatedCounter end={stat.count} suffix={stat.suffix} />
+                </p>
+                
+                <p className="text-xs md:text-sm text-beige-300/90 uppercase tracking-[0.2em] font-semibold font-sans">
+                  {stat.label}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 

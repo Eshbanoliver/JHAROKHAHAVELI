@@ -43,18 +43,18 @@ export default function FloatingButtons() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
-          className="animate-pulse-whatsapp flex h-14 w-14 items-center justify-center rounded-full bg-[#25d366] text-white shadow-xl transition-all duration-300 hover:scale-110 active:scale-95"
+          className="animate-pulse-whatsapp flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-[#25d366] text-white shadow-xl transition-all duration-300 hover:scale-110 active:scale-95"
         >
-          <FaWhatsapp className="h-7 w-7" />
+          <FaWhatsapp className="h-6 w-6 md:h-7 md:w-7" />
         </a>
 
         {/* Direct Call Button */}
         <a
           href="tel:+917665583595"
           aria-label="Call Jharokha Haveli"
-          className="animate-pulse-call flex h-14 w-14 items-center justify-center rounded-full bg-gold-500 text-white shadow-xl transition-all duration-300 hover:bg-gold-600 hover:scale-110 active:scale-95"
+          className="animate-pulse-call flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-gold-500 text-white shadow-xl transition-all duration-300 hover:bg-gold-600 hover:scale-110 active:scale-95"
         >
-          <FaPhoneAlt className="h-5 w-5" />
+          <FaPhoneAlt className="h-4 w-4 md:h-5 md:w-5" />
         </a>
       </div>
 
@@ -62,7 +62,7 @@ export default function FloatingButtons() {
       <button
         onClick={scrollToTop}
         aria-label="Scroll to top"
-        className={`fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-white text-gold-600 shadow-xl transition-all duration-500 border border-gold-100 hover:border-gold-400 hover:scale-110 active:scale-95 ${
+        className={`fixed bottom-6 right-6 z-50 flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-white text-gold-600 shadow-xl transition-all duration-500 border border-gold-100 hover:border-gold-400 hover:scale-110 active:scale-95 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0 pointer-events-none'
         }`}
       >
