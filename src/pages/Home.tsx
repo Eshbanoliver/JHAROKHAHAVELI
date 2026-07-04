@@ -69,14 +69,28 @@ const faqItems = [
   },
 ];
 
+const heroImages = [
+  '/haveli_6.jpg', // Lake sunset view
+  '/haveli_1.jpg',
+  '/haveli_7.jpg'
+];
+
 export default function Home() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [activeHeroImage, setActiveHeroImage] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 6000);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const heroTimer = setInterval(() => {
+      setActiveHeroImage((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(heroTimer);
   }, []);
 
   return (
@@ -90,15 +104,22 @@ export default function Home() {
       {/* 1. Hero Banner */}
       <section className="relative h-[90vh] -mt-24 overflow-hidden flex items-center justify-center">
         {/* Background Image with overlay */}
-        <div className="absolute inset-0">
-          <img 
-            src="/haveli_6.jpg" 
-            alt="Jharokha Haveli Lakeside Palace" 
-            className="w-full h-full object-cover scale-105"
-            style={{ filter: 'brightness(0.65)' }}
-          />
+        <div className="absolute inset-0 bg-dark-950">
+          <AnimatePresence>
+            <motion.img 
+              key={activeHeroImage}
+              src={heroImages[activeHeroImage]} 
+              alt="Jharokha Haveli Lakeside Palace" 
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ filter: 'brightness(0.65)' }}
+            />
+          </AnimatePresence>
           {/* Subtle parallax/gradient cover */}
-          <div className="absolute inset-0 bg-gradient-to-t from-dark-950/75 via-dark-950/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-dark-950/75 via-dark-950/30 to-transparent z-10" />
         </div>
 
         {/* Hero Content */}
