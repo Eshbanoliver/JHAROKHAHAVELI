@@ -444,40 +444,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Mission & Vision */}
-      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="p-8 border border-gold-500/20 rounded-2xl bg-white/40 shadow-sm relative overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 w-24 h-24 bg-gold-100 rounded-full blur-3xl -z-10" />
-          <span className="font-serif text-gold-600 text-lg italic block mb-2">Our Mission</span>
-          <h3 className="font-serif text-2xl md:text-3xl font-semibold text-emerald-800 mb-4">
-            To preserve heritage and offer pristine hospitality.
-          </h3>
-          <p className="font-sans text-sm md:text-base text-dark-900/80 leading-relaxed">
-            Our goal is to honor the glorious structural and cultural legacy of Rajasthan, presenting travelers and food enthusiasts with an authentic experience. We focus on providing personalized attention, sustainable operations, and maintaining high hospitality standards.
-          </p>
-        </motion.div>
+      {/* 5. Mission & Vision - Creative Section */}
+      <section className="relative py-24 px-6 md:px-12 bg-white overflow-hidden">
+        {/* Decorative corner accents */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-gold-500/10 rounded-bl-[100%] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-900/10 rounded-tr-[100%] pointer-events-none" />
 
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="p-8 border border-gold-500/20 rounded-2xl bg-white/40 shadow-sm relative overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-100 rounded-full blur-3xl -z-10" />
-          <span className="font-serif text-gold-600 text-lg italic block mb-2">Our Vision</span>
-          <h3 className="font-serif text-2xl md:text-3xl font-semibold text-emerald-800 mb-4">
-            To be the premier heritage destination in Udaipur.
-          </h3>
-          <p className="font-sans text-sm md:text-base text-dark-900/80 leading-relaxed">
-            We envision Jharokha Haveli as a timeless destination where visitors can reconnect with peace, taste the history of Mewar, and create lifetime memories in luxury, becoming the benchmark for premium boutique stays.
-          </p>
-        </motion.div>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
+            
+            {/* Mission Panel */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="group relative bg-emerald-950 rounded-3xl p-8 md:p-12 overflow-hidden shadow-2xl hover:shadow-emerald-900/40 transition-shadow duration-500"
+            >
+              <div className="absolute -top-32 -right-32 w-64 h-64 bg-gold-500/20 rounded-full blur-3xl group-hover:bg-gold-500/30 transition-colors duration-700" />
+              <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-emerald-800/50 rounded-full blur-3xl" />
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="mb-8 flex items-center justify-between">
+                  <span className="font-sans text-gold-400 text-xs uppercase tracking-[0.3em] font-bold border border-gold-500/30 px-4 py-2 rounded-full backdrop-blur-sm bg-emerald-950/50">
+                    Our Mission
+                  </span>
+                  <FaShieldAlt className="text-gold-500/20 w-16 h-16 transform -rotate-12 group-hover:scale-110 group-hover:text-gold-500/40 transition-all duration-500" />
+                </div>
+                <h3 className="font-serif text-3xl md:text-5xl font-semibold text-white mb-6 leading-tight group-hover:text-gold-100 transition-colors">
+                  To preserve heritage and offer pristine hospitality.
+                </h3>
+                <div className="w-16 h-[2px] bg-gold-500/50 mb-6" />
+                <p className="font-sans text-sm md:text-lg text-beige-200/80 leading-relaxed font-light mt-auto">
+                  Our goal is to honor the glorious structural and cultural legacy of Rajasthan, presenting travelers and food enthusiasts with an authentic experience. We focus on providing personalized attention, sustainable operations, and maintaining high hospitality standards.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Vision Panel */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="group relative bg-gold-50 rounded-3xl p-8 md:p-12 overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500 border border-gold-200/50"
+            >
+              <div className="absolute -top-32 -left-32 w-64 h-64 bg-emerald-900/10 rounded-full blur-3xl group-hover:bg-emerald-900/20 transition-colors duration-700" />
+              <div className="absolute -bottom-32 -right-32 w-64 h-64 bg-gold-300/30 rounded-full blur-3xl" />
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="mb-8 flex items-center justify-between">
+                  <span className="font-sans text-emerald-800 text-xs uppercase tracking-[0.3em] font-bold border border-emerald-900/20 px-4 py-2 rounded-full backdrop-blur-sm bg-white/50">
+                    Our Vision
+                  </span>
+                  <FaAward className="text-emerald-900/10 w-16 h-16 transform rotate-12 group-hover:scale-110 group-hover:text-emerald-900/30 transition-all duration-500" />
+                </div>
+                <h3 className="font-serif text-3xl md:text-5xl font-semibold text-emerald-950 mb-6 leading-tight">
+                  To be the premier heritage destination in Udaipur.
+                </h3>
+                <div className="w-16 h-[2px] bg-emerald-900/30 mb-6" />
+                <p className="font-sans text-sm md:text-lg text-emerald-950/70 leading-relaxed font-light mt-auto">
+                  We envision Jharokha Haveli as a timeless destination where visitors can reconnect with peace, taste the history of Mewar, and create lifetime memories in luxury, becoming the benchmark for premium boutique stays.
+                </p>
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
       </section>
 
       {/* 6. Core Values */}
