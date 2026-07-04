@@ -45,6 +45,27 @@ const testimonials = [
     rating: 5,
     image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150',
   },
+  {
+    name: 'Priya Desai',
+    role: 'Food Enthusiast',
+    text: 'The Mewari cuisine here is as authentic as it gets. Dining under the stars with the palace glowing in the distance is an experience I will never forget.',
+    rating: 5,
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150',
+  },
+  {
+    name: 'Rahul Sharma',
+    role: 'Family Vacationer',
+    text: 'A perfect blend of heritage and comfort. The kids loved the architecture and we loved the serene ambiance. Highly recommend for families.',
+    rating: 5,
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150',
+  },
+  {
+    name: 'Elena Rostova',
+    role: 'International Tourist',
+    text: 'This Haveli captures the true soul of Rajasthan. The hospitality was incredibly warm and the lake views from my window were like a painting.',
+    rating: 5,
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150',
+  }
 ];
 
 // Sample FAQ items
@@ -78,15 +99,7 @@ const heroImages = [
 ];
 
 export default function Home() {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [activeHeroImage, setActiveHeroImage] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
 
   useEffect(() => {
     const heroTimer = setInterval(() => {
@@ -800,9 +813,9 @@ export default function Home() {
         <Gallery />
       </section>
 
-      {/* 10. Testimonials Slider */}
-      <section className="py-24 px-6 md:px-12 max-w-4xl mx-auto space-y-12">
-        <div className="text-center space-y-4">
+      {/* 10. Testimonials Marquee */}
+      <section className="py-24 overflow-hidden space-y-12 bg-beige-50">
+        <div className="text-center space-y-4 px-6 md:px-12">
           <span className="text-gold-600 font-sans text-xs md:text-sm uppercase tracking-widest font-bold block">
             Guest Endorsements
           </span>
@@ -812,61 +825,51 @@ export default function Home() {
           <div className="w-12 h-[2px] bg-gold-400 mx-auto" />
         </div>
 
-        <div className="relative h-[280px] sm:h-[240px] md:h-[220px]">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTestimonial}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.5 }}
-              className="absolute inset-0 bg-white border border-beige-200 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col justify-between"
-            >
-              <div className="space-y-4">
-                <div className="flex gap-1 text-gold-500">
-                  {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
-                    <FaStar key={i} className="w-4 h-4 fill-current" />
-                  ))}
+        <div className="relative w-full overflow-hidden pb-8">
+          {/* Fading edges */}
+          <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-beige-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-beige-50 to-transparent z-10 pointer-events-none" />
+          
+          {/* Marquee Container */}
+          <div className="flex w-max animate-marquee hover:pause-animation">
+            {/* Double the array for seamless infinite scroll */}
+            {[...testimonials, ...testimonials].map((testimonial, idx) => (
+              <div 
+                key={idx}
+                className="w-[320px] md:w-[400px] flex-shrink-0 bg-white border border-beige-200 rounded-2xl p-6 md:p-8 shadow-sm mx-4 flex flex-col justify-between hover:shadow-md transition-shadow duration-300"
+              >
+                <div className="space-y-4">
+                  <div className="flex gap-1 text-gold-500">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <FaStar key={i} className="w-4 h-4 fill-current" />
+                    ))}
+                  </div>
+                  <div className="flex gap-4 items-start">
+                    <FaQuoteLeft className="text-gold-300 w-8 h-8 shrink-0" />
+                    <p className="font-sans text-dark-900/80 text-sm md:text-base italic leading-relaxed">
+                      {testimonial.text}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex gap-4 items-start">
-                  <FaQuoteLeft className="text-gold-300 w-8 h-8 shrink-0" />
-                  <p className="font-sans text-dark-900/80 text-sm md:text-base italic leading-relaxed">
-                    {testimonials[activeTestimonial].text}
-                  </p>
+                
+                <div className="flex items-center gap-4 border-t border-beige-100 pt-4 mt-6">
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name} 
+                    className="w-10 h-10 rounded-full object-cover border border-gold-200"
+                  />
+                  <div>
+                    <h4 className="font-serif text-sm font-bold text-emerald-950">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-[11px] text-dark-900/50 uppercase tracking-widest font-semibold">
+                      {testimonial.role}
+                    </p>
+                  </div>
                 </div>
               </div>
-              
-              <div className="flex items-center gap-4 border-t border-beige-100 pt-4 mt-4">
-                <img 
-                  src={testimonials[activeTestimonial].image} 
-                  alt={testimonials[activeTestimonial].name} 
-                  className="w-10 h-10 rounded-full object-cover border border-gold-200"
-                />
-                <div>
-                  <h4 className="font-serif text-sm font-bold text-emerald-950">
-                    {testimonials[activeTestimonial].name}
-                  </h4>
-                  <p className="text-[11px] text-dark-900/50 uppercase tracking-widest font-semibold">
-                    {testimonials[activeTestimonial].role}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* Carousel indicators */}
-        <div className="flex justify-center gap-2 pt-4">
-          {testimonials.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveTestimonial(idx)}
-              aria-label={`Go to testimonial ${idx + 1}`}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                activeTestimonial === idx ? 'w-6 bg-gold-500' : 'w-2 bg-beige-300'
-              }`}
-            />
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
