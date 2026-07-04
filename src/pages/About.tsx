@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FaCrown, FaHistory, FaAward, FaHeart } from 'react-icons/fa';
 import PageLayout from '../layouts/PageLayout';
 import SEO from '../components/SEO';
+import PageHero from '../components/PageHero';
 
 const timelineEvents = [
   {
@@ -41,18 +42,11 @@ export default function About() {
       />
 
       {/* About Header */}
-      <section className="bg-emerald-950 text-white py-20 px-6 md:px-12 text-center relative overflow-hidden -mt-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.1)_0,transparent_55%)]" />
-        <div className="relative z-10 max-w-4xl mx-auto space-y-4 pt-10">
-          <span className="text-gold-400 font-sans text-xs uppercase tracking-[0.3em] font-bold">
-            The Heritage & The Legacy
-          </span>
-          <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight">
-            Our Story & Heritage
-          </h1>
-          <div className="w-16 h-[2px] bg-gold-400 mx-auto mt-4" />
-        </div>
-      </section>
+      <PageHero 
+        subtitle="The Heritage & The Legacy" 
+        title="Our Story & Heritage" 
+        backgroundImage="/haveli_6.jpg" 
+      />
 
       {/* Narrative Section: Luxury Story */}
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

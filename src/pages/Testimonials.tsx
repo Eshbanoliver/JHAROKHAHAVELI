@@ -1,6 +1,7 @@
 import { FaStar, FaQuoteLeft, FaCheckCircle, FaAward } from 'react-icons/fa';
 import PageLayout from '../layouts/PageLayout';
 import SEO from '../components/SEO';
+import PageHero from '../components/PageHero';
 import GlassCard from '../components/GlassCard';
 
 const extendedTestimonials = [
@@ -70,18 +71,11 @@ export default function Testimonials() {
       />
 
       {/* Testimonials Header */}
-      <section className="bg-emerald-950 text-white py-20 px-6 md:px-12 text-center relative overflow-hidden -mt-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.1)_0,transparent_55%)]" />
-        <div className="relative z-10 max-w-4xl mx-auto space-y-4 pt-10">
-          <span className="text-gold-400 font-sans text-xs uppercase tracking-[0.3em] font-bold">
-            Guest Experiences
-          </span>
-          <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight">
-            Guest Testimonials
-          </h1>
-          <div className="w-16 h-[2px] bg-gold-400 mx-auto mt-4" />
-        </div>
-      </section>
+      <PageHero 
+        subtitle="Guest Experiences" 
+        title="Guest Testimonials" 
+        backgroundImage="/haveli_5.jpg" 
+      />
 
       {/* Stats Summary Panel */}
       <section className="py-12 px-6 max-w-5xl mx-auto -mt-10 relative z-10">

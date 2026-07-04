@@ -72,7 +72,7 @@ export default function Navbar() {
               <line x1="17" y1="22" x2="23" y2="22" stroke="currentColor" strokeWidth="1" />
             </svg>
             <div className="flex flex-col">
-              <span className="font-serif text-xl md:text-2xl font-bold tracking-widest text-emerald-800 leading-tight">
+              <span className={`font-serif text-xl md:text-2xl font-bold tracking-widest leading-tight transition-colors duration-300 ${isScrolled ? 'text-emerald-800' : 'text-white'}`}>
                 JHAROKHA
               </span>
               <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-gold-600 font-bold leading-none">
@@ -90,7 +90,11 @@ export default function Navbar() {
                   key={link.name}
                   to={link.path}
                   className={`relative font-sans text-sm font-semibold tracking-wider uppercase transition-colors duration-300 ${
-                    isActive ? 'text-gold-600' : 'text-emerald-950 hover:text-gold-500'
+                    isActive 
+                      ? 'text-gold-500' 
+                      : isScrolled 
+                        ? 'text-emerald-950 hover:text-gold-600' 
+                        : 'text-beige-100 hover:text-gold-400'
                   }`}
                 >
                   {link.name}
@@ -110,7 +114,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
-            className="md:hidden text-emerald-950 hover:text-gold-500 transition-colors"
+            className={`md:hidden transition-colors ${isScrolled ? 'text-emerald-950 hover:text-gold-600' : 'text-white hover:text-gold-400'}`}
           >
             {isOpen ? <FaTimes className="w-6 h-6" /> : <FaBars className="w-6 h-6" />}
           </button>
