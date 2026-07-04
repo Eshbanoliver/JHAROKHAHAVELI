@@ -49,75 +49,115 @@ export default function About() {
       />
 
       {/* Narrative Section: Luxury Story */}
-      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <motion.div 
-          initial={{ opacity: 0, x: -35 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="space-y-6"
-        >
-          <span className="text-gold-600 font-sans text-xs md:text-sm uppercase tracking-widest font-bold block">
-            Lakeside Romance
-          </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-semibold text-emerald-800 leading-tight">
-            The History Behind Jharokha Haveli
-          </h2>
-          <p className="font-sans text-dark-900/80 leading-relaxed">
-            In Udaipur, the <em>"City of Lakes"</em>, windows represent more than ventilation; they are viewpoints to beauty. Historically, a "Jharokha" is a stone window projecting from the wall of a palace, where royals sat to watch lake views. Jharokha Haveli was conceived to give every modern guest that exact royal viewpoint.
-          </p>
-          <p className="font-sans text-dark-900/75 leading-relaxed text-sm">
-            Located near the Leela Staff Gate along Amrai Ghat ChandPol, we are surrounded by historical architecture, narrow streets filled with tales, and the soothing currents of the lake. Every stone, arch, and corner of our property has been hand-selected and hand-finished by master stonemasons whose families have carved palaces for centuries.
-          </p>
+      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center relative">
           
-          <div className="grid grid-cols-2 gap-6 pt-4 border-t border-beige-200">
-            <div>
-              <h4 className="font-serif text-lg font-bold text-emerald-950 flex items-center gap-2">
-                <FaCrown className="text-gold-500" /> Royal Vibe
-              </h4>
-              <p className="font-sans text-xs text-dark-900/70 mt-1">Carved sandstones, gold leaf details, and luxury chandeliers.</p>
+          {/* Text Content */}
+          <motion.div 
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="space-y-8 relative z-10"
+          >
+            <div className="space-y-4">
+              <span className="inline-block py-1.5 px-4 rounded-full border border-gold-500/30 bg-gold-50 text-gold-600 font-sans text-xs uppercase tracking-widest font-bold shadow-sm">
+                Lakeside Romance
+              </span>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-emerald-950 leading-[1.1]">
+                The History Behind <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-500 to-gold-700">Jharokha Haveli</span>
+              </h2>
             </div>
-            <div>
-              <h4 className="font-serif text-lg font-bold text-emerald-950 flex items-center gap-2">
-                <FaHeart className="text-gold-500" /> Warm Service
-              </h4>
-              <p className="font-sans text-xs text-dark-900/70 mt-1">Traditional Indian greetings, personalized hosting, and local guides.</p>
+            
+            <div className="space-y-6">
+              <p className="text-lg md:text-xl font-serif italic text-emerald-800/90 border-l-4 border-gold-400 pl-4 py-1">
+                In Udaipur, the "City of Lakes", windows represent more than ventilation; they are viewpoints to beauty.
+              </p>
+              <p className="font-sans text-dark-900/80 leading-relaxed text-sm md:text-base">
+                Historically, a "Jharokha" is a stone window projecting from the wall of a palace, where royals sat to watch lake views. Jharokha Haveli was conceived to give every modern guest that exact royal viewpoint.
+              </p>
+              <p className="font-sans text-dark-900/80 leading-relaxed text-sm md:text-base">
+                Located near the Leela Staff Gate along Amrai Ghat ChandPol, we are surrounded by historical architecture, narrow streets filled with tales, and the soothing currents of the lake. Every stone, arch, and corner of our property has been hand-selected and hand-finished by master stonemasons whose families have carved palaces for centuries.
+              </p>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Beautiful Image Layout */}
-        <motion.div 
-          initial={{ opacity: 0, x: 35 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="grid grid-cols-12 gap-4 h-[450px]"
-        >
-          <div className="col-span-7 relative rounded-2xl overflow-hidden shadow-xl border border-beige-200">
-            <img 
-              src="/haveli_6.jpg" 
-              alt="Lakeside Palace" 
-              className="w-full h-full object-cover" 
-            />
+          {/* Dynamic Image Collage */}
+          <div className="relative h-[500px] md:h-[650px] w-full flex items-center justify-center mt-10 lg:mt-0">
+            {/* Background glowing orb */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gold-400/20 rounded-full blur-[80px] pointer-events-none" />
+            
+            {/* Main Image */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8, rotate: -2 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 2 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, type: "spring", bounce: 0.3 }}
+              whileHover={{ scale: 1.02, rotate: 0 }}
+              className="absolute z-10 w-[70%] h-[80%] right-0 top-0 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/80 bg-beige-100"
+            >
+              <img src="/haveli_6.jpg" alt="Lakeside Palace" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+            </motion.div>
+
+            {/* Overlapping Image 1 */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50, rotate: -10 }}
+              whileInView={{ opacity: 1, x: 0, rotate: -6 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.2, type: "spring", bounce: 0.4 }}
+              whileHover={{ scale: 1.05, rotate: 0, zIndex: 40 }}
+              className="absolute z-20 w-[45%] h-[45%] left-0 bottom-[20%] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-4 border-white/90 bg-beige-100"
+            >
+              <img src="/haveli_5.jpg" alt="Room Arches" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+            </motion.div>
+
+            {/* Overlapping Image 2 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50, rotate: 15 }}
+              whileInView={{ opacity: 1, y: 0, rotate: 8 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.4, type: "spring", bounce: 0.4 }}
+              whileHover={{ scale: 1.05, rotate: 0, zIndex: 40 }}
+              className="absolute z-30 w-[40%] h-[40%] right-[10%] bottom-0 rounded-[2rem] overflow-hidden shadow-xl border-4 border-white/90 bg-beige-100"
+            >
+              <img src="/haveli_3.jpg" alt="Lakeside Dinner Table" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+            </motion.div>
+
+            {/* Floating Glass Card 1 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6, type: "spring" }}
+              className="absolute z-40 left-[-5%] top-[10%] bg-white/80 backdrop-blur-md p-3 md:p-4 rounded-2xl shadow-xl border border-white flex items-center gap-3 w-48 md:w-56"
+            >
+              <div className="bg-gold-50 p-2 rounded-full text-gold-600 shrink-0">
+                <FaCrown className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-serif text-sm font-bold text-emerald-950">Royal Vibe</h4>
+                <p className="font-sans text-[10px] text-dark-900/70 leading-tight mt-0.5">Handcarved stone & gold details.</p>
+              </div>
+            </motion.div>
+
+            {/* Floating Glass Card 2 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.8, type: "spring" }}
+              className="absolute z-40 right-[-5%] top-[45%] bg-emerald-950/80 backdrop-blur-md p-3 md:p-4 rounded-2xl shadow-xl border border-emerald-800 flex items-center gap-3 w-48 md:w-56"
+            >
+              <div className="bg-emerald-900 p-2 rounded-full text-gold-400 shrink-0">
+                <FaHeart className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-serif text-sm font-bold text-white">Warm Service</h4>
+                <p className="font-sans text-[10px] text-beige-200/70 leading-tight mt-0.5">Personalized hosting & guides.</p>
+              </div>
+            </motion.div>
           </div>
-          <div className="col-span-5 grid grid-rows-2 gap-4">
-            <div className="relative rounded-2xl overflow-hidden shadow-md border border-beige-200">
-              <img 
-                src="/haveli_5.jpg" 
-                alt="Room Arches" 
-                className="w-full h-full object-cover" 
-              />
-            </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-md border border-beige-200">
-              <img 
-                src="/haveli_3.jpg" 
-                alt="Lakeside Dinner Table" 
-                className="w-full h-full object-cover" 
-              />
-            </div>
-          </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Our Heritage & Hospitality */}
