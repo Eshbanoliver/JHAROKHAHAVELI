@@ -873,20 +873,77 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 10. FAQ Section */}
-      <section className="py-24 px-6 md:px-12 bg-beige-100/30 border-t border-beige-200">
-        <div className="max-w-7xl mx-auto space-y-12">
-          <div className="text-center space-y-4">
-            <span className="text-gold-600 font-sans text-xs md:text-sm uppercase tracking-widest font-bold block">
-              Got Questions?
-            </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-emerald-800">
-              Frequently Asked Questions
-            </h2>
-            <div className="w-12 h-[2px] bg-gold-400 mx-auto" />
+      {/* 10. FAQ Section - Modern Revamp */}
+      <section className="relative py-32 px-6 md:px-12 bg-white overflow-hidden border-t border-beige-200">
+        {/* Animated background glow */}
+        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-gold-400/10 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-emerald-900/5 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 relative z-10">
+          
+          {/* Left Column: Heading & Contact Card */}
+          <div className="lg:col-span-5 space-y-10">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
+              <div className="inline-flex items-center gap-3">
+                <span className="w-8 h-[1px] bg-gold-500" />
+                <span className="text-gold-600 font-sans text-xs uppercase tracking-[0.3em] font-bold">
+                  Got Questions?
+                </span>
+              </div>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-950 leading-tight">
+                Frequently <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-800 to-gold-600">Asked Questions</span>
+              </h2>
+              <p className="font-sans text-dark-900/70 text-base md:text-lg leading-relaxed max-w-md">
+                Find quick answers to your inquiries about reservations, amenities, and the majestic heritage experience at Jharokha Haveli.
+              </p>
+            </motion.div>
+
+            {/* Floating Support Card */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative p-8 rounded-3xl bg-emerald-950 text-white shadow-2xl overflow-hidden group"
+            >
+              {/* Shimmer effect */}
+              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/5 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
+              
+              <div className="relative z-10 flex items-start gap-6">
+                <div className="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-500/30 flex items-center justify-center shrink-0">
+                  <FaPhoneAlt className="w-6 h-6 text-gold-400" />
+                </div>
+                <div className="space-y-3">
+                  <h4 className="font-serif text-xl font-bold">Still have questions?</h4>
+                  <p className="font-sans text-sm text-beige-200/70 leading-relaxed">
+                    Our luxury concierge team is available 24/7 to assist you with any special requests.
+                  </p>
+                  <a href="tel:+917665583595" className="inline-flex items-center text-gold-400 hover:text-gold-300 font-sans text-sm uppercase tracking-widest font-bold mt-2 transition-colors">
+                    Contact Support &rarr;
+                  </a>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
-          <Accordion items={faqItems} />
+          {/* Right Column: Accordion */}
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="lg:col-span-7"
+          >
+            <Accordion items={faqItems} />
+          </motion.div>
+
         </div>
       </section>
     </PageLayout>
