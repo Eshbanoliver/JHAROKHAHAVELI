@@ -102,7 +102,7 @@ export default function About() {
         >
           <div className="col-span-7 relative rounded-2xl overflow-hidden shadow-xl border border-beige-200">
             <img 
-              src="/hero_background.png" 
+              src="/haveli_6.jpg" 
               alt="Lakeside Palace" 
               className="w-full h-full object-cover" 
             />
@@ -110,14 +110,14 @@ export default function About() {
           <div className="col-span-5 grid grid-rows-2 gap-4">
             <div className="relative rounded-2xl overflow-hidden shadow-md border border-beige-200">
               <img 
-                src="/luxury_room.png" 
+                src="/haveli_5.jpg" 
                 alt="Room Arches" 
                 className="w-full h-full object-cover" 
               />
             </div>
             <div className="relative rounded-2xl overflow-hidden shadow-md border border-beige-200">
               <img 
-                src="/dining_experience.png" 
+                src="/haveli_3.jpg" 
                 alt="Lakeside Dinner Table" 
                 className="w-full h-full object-cover" 
               />

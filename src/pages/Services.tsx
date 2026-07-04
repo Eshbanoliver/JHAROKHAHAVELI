@@ -47,7 +47,7 @@ export default function Services() {
             className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-beige-200"
           >
             <img 
-              src="/dining_experience.png" 
+              src="/haveli_3.jpg" 
               alt="Lakeside Fine Dining Restaurant" 
               className="w-full h-full object-cover" 
             />
@@ -226,7 +226,7 @@ export default function Services() {
             className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-beige-200 lg:order-2"
           >
             <img 
-              src="/luxury_room.png" 
+              src="/haveli_5.jpg" 
               alt="Premium Resort Suite Room" 
               className="w-full h-full object-cover" 
             />

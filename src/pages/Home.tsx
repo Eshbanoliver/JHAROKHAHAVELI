@@ -17,6 +17,7 @@ import SEO from '../components/SEO';
 import GlassCard from '../components/GlassCard';
 import AnimatedCounter from '../components/AnimatedCounter';
 import Accordion from '../components/Accordion';
+import Gallery from '../components/Gallery';
 import { useState, useEffect } from 'react';
 
 // Sample testimonials data
@@ -91,7 +92,7 @@ export default function Home() {
         {/* Background Image with overlay */}
         <div className="absolute inset-0">
           <img 
-            src="/hero_background.png" 
+            src="/haveli_6.jpg" 
             alt="Jharokha Haveli Lakeside Palace" 
             className="w-full h-full object-cover scale-105"
             style={{ filter: 'brightness(0.65)' }}
@@ -209,14 +210,14 @@ export default function Home() {
           
           <div className="col-span-8 row-span-12 relative overflow-hidden rounded-2xl shadow-xl">
             <img 
-              src="/dining_experience.png" 
+              src="/haveli_3.jpg" 
               alt="Luxury Dining Set" 
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
             />
           </div>
           <div className="col-span-4 row-span-6 relative overflow-hidden rounded-2xl shadow-lg">
             <img 
-              src="/luxury_room.png" 
+              src="/haveli_5.jpg" 
               alt="Luxury suite" 
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
             />
@@ -293,7 +294,7 @@ export default function Home() {
             <GlassCard className="flex flex-col h-full">
               <div className="relative h-64 md:h-80 rounded-xl overflow-hidden mb-6 group-hover:shadow-md">
                 <img 
-                  src="/dining_experience.png" 
+                  src="/haveli_3.jpg" 
                   alt="Fine Dining" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                 />
@@ -327,7 +328,7 @@ export default function Home() {
             <GlassCard className="flex flex-col h-full">
               <div className="relative h-64 md:h-80 rounded-xl overflow-hidden mb-6">
                 <img 
-                  src="/luxury_room.png" 
+                  src="/haveli_5.jpg" 
                   alt="Premium Suites" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                 />
@@ -514,7 +515,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9. Testimonials Slider */}
+      {/* 9. Responsive Image Gallery */}
+      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto space-y-16 border-t border-beige-200">
+        <div className="text-center space-y-4 max-w-2xl mx-auto">
+          <span className="text-gold-600 font-sans text-xs md:text-sm uppercase tracking-widest font-bold block">
+            Visual Experience
+          </span>
+          <h2 className="font-serif text-3xl md:text-5xl font-semibold text-emerald-800 leading-tight">
+            Our Property Photo Gallery
+          </h2>
+          <p className="text-sm font-sans text-dark-900/60 max-w-lg mx-auto">
+            Take a visual tour of Jharokha Haveli—from our carved heritage rooms to the sunset rooftop restaurant overlooking the lake.
+          </p>
+          <div className="w-16 h-[2px] bg-gold-400 mx-auto mt-4" />
+        </div>
+
+        <Gallery />
+      </section>
+
+      {/* 10. Testimonials Slider */}
       <section className="py-24 px-6 md:px-12 max-w-4xl mx-auto space-y-12">
         <div className="text-center space-y-4">
           <span className="text-gold-600 font-sans text-xs md:text-sm uppercase tracking-widest font-bold block">
