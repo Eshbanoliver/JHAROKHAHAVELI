@@ -306,87 +306,140 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Services Overview */}
-      <section className="py-24 px-6 md:px-12 bg-beige-100/50">
-        <div className="max-w-7xl mx-auto space-y-16">
-          <div className="text-center space-y-4 max-w-2xl mx-auto">
-            <span className="text-gold-600 font-sans text-xs md:text-sm uppercase tracking-widest font-bold block">
-              Exclusive Sanctuary
-            </span>
-            <h2 className="font-serif text-3xl md:text-5xl font-semibold text-emerald-800 leading-tight">
-              Our Hospitality Services
+      {/* 4. Services Overview - Creative Section */}
+      <section className="relative py-32 px-6 md:px-12 bg-beige-50 overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold-900/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-900/5 rounded-full blur-[80px] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto relative z-10 space-y-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1 }}
+            className="text-center space-y-6 max-w-2xl mx-auto"
+          >
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-12 h-[1px] bg-gold-400" />
+              <span className="text-gold-600 font-sans text-xs md:text-sm uppercase tracking-[0.3em] font-bold">
+                Exclusive Sanctuary
+              </span>
+              <div className="w-12 h-[1px] bg-gold-400" />
+            </div>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-950 leading-tight">
+              Our Hospitality <span className="italic font-light text-gold-600">Services</span>
             </h2>
-            <div className="w-16 h-[2px] bg-gold-400 mx-auto mt-4" />
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Restaurant Card */}
-            <GlassCard className="flex flex-col h-full">
-              <div className="relative h-64 md:h-80 rounded-xl overflow-hidden mb-6 group-hover:shadow-md">
-                <img 
-                  src="/haveli_3.jpg" 
-                  alt="Fine Dining" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                />
-                <div className="absolute top-4 left-4 bg-emerald-800 text-white p-3 rounded-full shadow-lg">
-                  <FaUtensils className="w-5 h-5 text-gold-300" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+            {/* Restaurant Card (Creative) */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="group relative"
+            >
+              <div className="absolute -inset-4 bg-gradient-to-r from-gold-500/0 via-gold-500/10 to-emerald-900/5 rounded-[2rem] blur-xl transition-all duration-700 group-hover:via-gold-500/20 group-hover:blur-2xl" />
+              
+              <div className="relative h-full bg-white/70 backdrop-blur-xl border border-white/60 p-6 md:p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 flex flex-col overflow-hidden">
+                {/* Floating Number */}
+                <div className="absolute -top-10 -right-4 text-[180px] font-serif font-black text-gold-900/[0.03] z-0 select-none group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-700 pointer-events-none">
+                  1
+                </div>
+
+                <div className="relative z-10 rounded-2xl overflow-hidden mb-8 h-72 shadow-lg">
+                  <div className="absolute inset-0 bg-emerald-950/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                  <img 
+                    src="/haveli_3.jpg" 
+                    alt="Fine Dining" 
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                  />
+                  <div className="absolute bottom-4 left-4 z-20 flex items-center gap-3 bg-white/95 backdrop-blur-md px-5 py-2.5 rounded-full shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                    <FaUtensils className="text-gold-500 w-4 h-4" />
+                    <span className="font-sans text-xs uppercase tracking-widest font-bold text-emerald-950">Fine Dining</span>
+                  </div>
+                </div>
+
+                <div className="relative z-10 flex flex-col flex-grow">
+                  <h3 className="font-serif text-3xl md:text-4xl font-bold text-emerald-950 mb-4 group-hover:text-gold-700 transition-colors">
+                    Scenic Lake-View Restaurant
+                  </h3>
+                  <p className="font-sans text-dark-900/70 text-sm md:text-base leading-relaxed mb-8 flex-grow">
+                    Dine in absolute bliss. Our premium restaurant features outdoor open-air seating overlooking the majestic water vistas of Udaipur. We serve rich, authentic Mewari dishes prepared by heritage chefs, alongside stellar multi-cuisine items that satisfy the most refined palates.
+                  </p>
+                  <div className="flex flex-wrap gap-4 mt-auto">
+                    <Link 
+                      to="/services" 
+                      className="px-8 py-3.5 bg-emerald-900 hover:bg-emerald-800 text-white font-sans text-xs uppercase tracking-widest font-bold rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_-10px_rgba(6,78,59,0.5)]"
+                    >
+                      Dining Details
+                    </Link>
+                    <Link 
+                      to="/contact" 
+                      className="px-8 py-3.5 border-2 border-gold-500/30 text-emerald-950 hover:border-gold-500 hover:bg-gold-50 font-sans text-xs uppercase tracking-widest font-bold rounded-xl transition-all duration-300 hover:-translate-y-1"
+                    >
+                      Reserve Table
+                    </Link>
+                  </div>
                 </div>
               </div>
-              <h3 className="font-serif text-2xl md:text-3xl font-semibold text-emerald-950 mb-3">
-                1. Scenic Lake-View Restaurant
-              </h3>
-              <p className="font-sans text-dark-900/80 text-sm md:text-base leading-relaxed mb-6 flex-grow">
-                Dine in absolute bliss. Our premium restaurant features outdoor open-air seating overlooking the majestic water vistas of Udaipur. We serve rich, authentic Mewari dishes prepared by heritage chefs, alongside stellar multi-cuisine items that satisfy the most refined palates.
-              </p>
-              <div className="flex gap-4">
-                <Link 
-                  to="/services" 
-                  className="px-6 py-3 bg-emerald-800 hover:bg-emerald-900 text-white font-sans text-xs uppercase tracking-wider font-bold rounded-lg transition-colors"
-                >
-                  Dining Details
-                </Link>
-                <Link 
-                  to="/contact" 
-                  className="px-6 py-3 border border-emerald-800 text-emerald-800 hover:bg-emerald-50 font-sans text-xs uppercase tracking-wider font-bold rounded-lg transition-colors"
-                >
-                  Reserve Table
-                </Link>
-              </div>
-            </GlassCard>
+            </motion.div>
 
-            {/* Resort Card */}
-            <GlassCard className="flex flex-col h-full">
-              <div className="relative h-64 md:h-80 rounded-xl overflow-hidden mb-6">
-                <img 
-                  src="/haveli_5.jpg" 
-                  alt="Premium Suites" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                />
-                <div className="absolute top-4 left-4 bg-emerald-800 text-white p-3 rounded-full shadow-lg">
-                  <FaBed className="w-5 h-5 text-gold-300" />
+            {/* Resort Card (Creative) */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="group relative"
+            >
+              <div className="absolute -inset-4 bg-gradient-to-l from-gold-500/0 via-emerald-900/5 to-gold-500/5 rounded-[2rem] blur-xl transition-all duration-700 group-hover:via-emerald-900/15 group-hover:blur-2xl" />
+              
+              <div className="relative h-full bg-white/70 backdrop-blur-xl border border-white/60 p-6 md:p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 flex flex-col overflow-hidden">
+                {/* Floating Number */}
+                <div className="absolute -top-10 -right-4 text-[180px] font-serif font-black text-gold-900/[0.03] z-0 select-none group-hover:scale-110 group-hover:rotate-6 transition-transform duration-700 pointer-events-none">
+                  2
+                </div>
+
+                <div className="relative z-10 rounded-2xl overflow-hidden mb-8 h-72 shadow-lg">
+                  <div className="absolute inset-0 bg-gold-900/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                  <img 
+                    src="/haveli_5.jpg" 
+                    alt="Premium Suites" 
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                  />
+                  <div className="absolute bottom-4 left-4 z-20 flex items-center gap-3 bg-white/95 backdrop-blur-md px-5 py-2.5 rounded-full shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                    <FaBed className="text-gold-500 w-4 h-4" />
+                    <span className="font-sans text-xs uppercase tracking-widest font-bold text-emerald-950">Luxury Stay</span>
+                  </div>
+                </div>
+
+                <div className="relative z-10 flex flex-col flex-grow">
+                  <h3 className="font-serif text-3xl md:text-4xl font-bold text-emerald-950 mb-4 group-hover:text-gold-700 transition-colors">
+                    Premium Heritage Resort Stay
+                  </h3>
+                  <p className="font-sans text-dark-900/70 text-sm md:text-base leading-relaxed mb-8 flex-grow">
+                    Relax in traditional royal chambers equipped with modern luxuries. Our suites feature handcrafted arches, gold metallic details, comfortable bedding, and quiet lounge spaces. Wake up to the soothing sound of soft waves and glorious morning sun rays lighting up your room.
+                  </p>
+                  <div className="flex flex-wrap gap-4 mt-auto">
+                    <Link 
+                      to="/services" 
+                      className="px-8 py-3.5 bg-gold-600 hover:bg-gold-700 text-white font-sans text-xs uppercase tracking-widest font-bold rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_-10px_rgba(212,175,55,0.5)]"
+                    >
+                      Resort Details
+                    </Link>
+                    <Link 
+                      to="/contact" 
+                      className="px-8 py-3.5 border-2 border-emerald-900/20 text-emerald-950 hover:border-emerald-900 hover:bg-emerald-50 font-sans text-xs uppercase tracking-widest font-bold rounded-xl transition-all duration-300 hover:-translate-y-1"
+                    >
+                      Book Your Room
+                    </Link>
+                  </div>
                 </div>
               </div>
-              <h3 className="font-serif text-2xl md:text-3xl font-semibold text-emerald-950 mb-3">
-                2. Premium Heritage Resort Stay
-              </h3>
-              <p className="font-sans text-dark-900/80 text-sm md:text-base leading-relaxed mb-6 flex-grow">
-                Relax in traditional royal chambers equipped with modern luxuries. Our suites feature handcrafted arches, gold metallic details, comfortable bedding, and quiet lounge spaces. Wake up to the soothing sound of soft waves and glorious morning sun rays lighting up your room.
-              </p>
-              <div className="flex gap-4">
-                <Link 
-                  to="/services" 
-                  className="px-6 py-3 bg-emerald-800 hover:bg-emerald-900 text-white font-sans text-xs uppercase tracking-wider font-bold rounded-lg transition-colors"
-                >
-                  Resort Details
-                </Link>
-                <Link 
-                  to="/contact" 
-                  className="px-6 py-3 border border-emerald-800 text-emerald-800 hover:bg-emerald-50 font-sans text-xs uppercase tracking-wider font-bold rounded-lg transition-colors"
-                >
-                  Book Your Room
-                </Link>
-              </div>
-            </GlassCard>
+            </motion.div>
           </div>
         </div>
       </section>
