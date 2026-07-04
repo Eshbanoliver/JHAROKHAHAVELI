@@ -12,11 +12,11 @@ import {
   FaQuoteLeft, 
   FaStar,
   FaUsers,
-  FaCalendarAlt
+  FaCalendarAlt,
+  FaPhoneAlt
 } from 'react-icons/fa';
 import PageLayout from '../layouts/PageLayout';
 import SEO from '../components/SEO';
-import GlassCard from '../components/GlassCard';
 import AnimatedCounter from '../components/AnimatedCounter';
 import Accordion from '../components/Accordion';
 import Gallery from '../components/Gallery';
@@ -720,29 +720,65 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. CTA Section */}
-      <section className="py-24 relative overflow-hidden bg-emerald-950 text-white">
-        {/* Parallax Background Glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.15)_0,transparent_60%)]" />
+      {/* 8. CTA Section - Creative Section */}
+      <section className="relative py-32 overflow-hidden bg-emerald-950">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0">
+          <img 
+            src="/haveli_6.jpg" 
+            alt="Haveli Background" 
+            className="w-full h-full object-cover opacity-30 mix-blend-overlay"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-emerald-950 via-emerald-950/80 to-emerald-950" />
+        </div>
         
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-6">
-          <span className="text-gold-400 font-sans text-xs uppercase tracking-[0.3em] font-bold">
-            Unforgettable Memories Await
-          </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold leading-tight">
-            Ready to Experience Traditional Rajasthani Luxury?
-          </h2>
-          <p className="font-sans text-sm md:text-base text-beige-200/90 max-w-xl mx-auto">
-            Book a romantic dinner table under the stars or plan your luxury family vacation with lake views in our premium heritage suites.
-          </p>
-          <div className="pt-6">
-            <Link 
-              to="/contact" 
-              className="inline-block px-10 py-4 bg-gold-500 hover:bg-gold-600 text-white font-sans text-xs uppercase tracking-widest font-bold rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg active:translate-y-0"
-            >
-              Reserve / Inquire Now
-            </Link>
-          </div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-500/20 rounded-full blur-[120px] pointer-events-none" />
+        
+        <div className="relative z-10 max-w-5xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-[3rem] p-10 md:p-16 text-center shadow-2xl overflow-hidden group hover:border-gold-500/50 transition-colors duration-700"
+          >
+            {/* Animated shimmer sweep */}
+            <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:animate-[shimmer_2s_infinite] pointer-events-none" />
+            
+            <div className="space-y-8 relative z-10">
+              <div className="flex justify-center">
+                <span className="inline-block px-6 py-2 rounded-full border border-gold-400/50 bg-gold-400/10 text-gold-300 font-sans text-xs md:text-sm uppercase tracking-[0.3em] font-bold backdrop-blur-md shadow-inner">
+                  Unforgettable Memories Await
+                </span>
+              </div>
+              
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl mx-auto">
+                Ready to Experience Traditional <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-200">Rajasthani Luxury?</span>
+              </h2>
+              
+              <p className="font-sans text-base md:text-lg text-beige-200/80 max-w-2xl mx-auto font-light leading-relaxed">
+                Book a romantic dinner table under the stars or plan your luxury family vacation with lake views in our premium heritage suites.
+              </p>
+              
+              <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
+                <Link 
+                  to="/contact" 
+                  className="relative group/btn inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-gold-600 to-gold-400 text-emerald-950 font-sans text-sm uppercase tracking-widest font-black rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.5)] overflow-hidden"
+                >
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-white/0 via-white/30 to-white/0 -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]" />
+                  <span className="relative">Reserve / Inquire Now</span>
+                </Link>
+                
+                <a 
+                  href="tel:+917665583595"
+                  className="inline-flex items-center justify-center px-8 py-5 border border-white/30 text-white hover:bg-white/10 hover:border-white/50 font-sans text-sm uppercase tracking-widest font-bold rounded-full transition-all duration-300"
+                >
+                  <FaPhoneAlt className="mr-3 text-gold-400" />
+                  Call Us
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
