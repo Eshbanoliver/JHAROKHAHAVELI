@@ -246,43 +246,83 @@ export default function About() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-24 px-6 md:px-12 max-w-5xl mx-auto space-y-16">
-        <div className="text-center space-y-4">
-          <span className="text-gold-600 font-sans text-xs md:text-sm uppercase tracking-widest font-bold block">
-            How We Evolved
-          </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-semibold text-emerald-800">
-            Our Historical Timeline
-          </h2>
-          <div className="w-16 h-[2px] bg-gold-400 mx-auto" />
-        </div>
-
-        <div className="relative border-l-2 border-gold-300 ml-4 md:ml-32 space-y-12 py-4">
-          {timelineEvents.map((event, idx) => (
-            <motion.div 
-              key={event.year}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+      <section className="relative py-32 px-6 md:px-12 overflow-hidden bg-beige-50">
+        {/* Background Decorative elements */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold-200/30 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-200/20 rounded-full blur-[120px] pointer-events-none" />
+        
+        <div className="max-w-6xl mx-auto space-y-24 relative z-10">
+          <div className="text-center space-y-6">
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="relative pl-8 md:pl-12"
+              className="inline-block py-1.5 px-4 rounded-full border border-gold-300 bg-gold-50 text-gold-700 font-sans text-xs uppercase tracking-widest font-bold shadow-sm"
             >
-              {/* Year Bubble */}
-              <div className="absolute -left-[17px] top-1.5 bg-gold-500 text-white font-serif text-xs px-2.5 py-1 rounded-full border-4 border-beige-100 shadow-md">
-                {event.year}
-              </div>
+              How We Evolved
+            </motion.span>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="font-serif text-4xl md:text-6xl font-semibold text-emerald-950"
+            >
+              Our Historical Timeline
+            </motion.h2>
+          </div>
 
-              {/* Event Content */}
-              <div className="bg-white border border-beige-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h4 className="font-serif text-lg md:text-xl font-bold text-emerald-950 mb-2">
-                  {event.title}
-                </h4>
-                <p className="font-sans text-sm text-dark-900/75 leading-relaxed">
-                  {event.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+          <div className="relative max-w-5xl mx-auto">
+            {/* Center glowing line for desktop */}
+            <div className="absolute left-[39px] md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-gold-400 to-transparent opacity-50" />
+            
+            <div className="space-y-16 md:space-y-24">
+              {timelineEvents.map((event, idx) => {
+                const isEven = idx % 2 === 0;
+                return (
+                  <motion.div 
+                    key={event.year}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, delay: 0.1 }}
+                    className={`relative flex flex-col md:flex-row items-start md:items-center justify-between ${isEven ? 'md:flex-row-reverse' : ''}`}
+                  >
+                    {/* Empty half for spacing on desktop */}
+                    <div className="hidden md:block w-[45%]" />
+
+                    {/* Center Node / Year Bubble */}
+                    <div className="absolute md:relative left-0 md:left-auto top-0 md:top-auto flex items-center justify-center w-20 h-20 md:w-auto md:h-auto z-10">
+                      <motion.div 
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-gold-400 via-amber-500 to-amber-600 rounded-full flex items-center justify-center border-4 border-white shadow-[0_0_30px_rgba(212,175,55,0.4)] cursor-default"
+                      >
+                        <span className="text-white font-serif font-bold text-xl md:text-2xl drop-shadow-md">{event.year}</span>
+                      </motion.div>
+                    </div>
+
+                    {/* Content Card */}
+                    <div className="w-full md:w-[45%] pl-28 md:pl-0">
+                      <motion.div 
+                        whileHover={{ y: -10 }}
+                        className="group relative bg-white/70 backdrop-blur-xl rounded-[2rem] p-8 md:p-10 shadow-xl border border-white/60 hover:border-gold-300 transition-all duration-500 hover:shadow-2xl hover:shadow-gold-500/10"
+                      >
+                        {/* Decorative corner blur */}
+                        <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-gold-300 to-amber-200 rounded-full opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-500 pointer-events-none" />
+                        
+                        <h4 className="font-serif text-2xl md:text-3xl font-bold text-emerald-950 mb-4 relative z-10">
+                          {event.title}
+                        </h4>
+                        <p className="font-sans text-base text-dark-900/80 leading-relaxed relative z-10">
+                          {event.description}
+                        </p>
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
 
