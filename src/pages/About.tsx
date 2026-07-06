@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaCrown, FaHistory, FaAward, FaHeart } from 'react-icons/fa';
+import { FaCrown, FaHistory, FaAward, FaHeart, FaStar, FaEye, FaGem, FaLeaf } from 'react-icons/fa';
 import PageLayout from '../layouts/PageLayout';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
@@ -222,41 +222,147 @@ export default function About() {
 
 
       {/* Mission, Vision & Core Values Redux */}
-      <section className="py-20 px-6 md:px-12 bg-emerald-950 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08)_0,transparent_60%)]" />
-        <div className="max-w-7xl mx-auto space-y-16 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-b border-white/10 pb-16">
-            <div className="space-y-4">
-              <span className="text-gold-400 font-sans text-xs uppercase tracking-widest font-bold">The Mission</span>
-              <h3 className="font-serif text-2xl md:text-4xl font-semibold">Preserving Udaipur Legacy</h3>
-              <p className="font-sans text-sm md:text-base text-beige-200/80 leading-relaxed">
+      <section className="py-32 px-6 md:px-12 bg-gradient-to-br from-emerald-950 via-[#064e3b] to-emerald-900 text-white relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold-500/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[120px] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto relative z-10 space-y-24">
+          
+          {/* Mission & Vision */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white/5 backdrop-blur-xl rounded-[2.5rem] p-10 md:p-14 border border-white/10 hover:border-gold-500/30 transition-colors shadow-2xl relative overflow-hidden group"
+            >
+              <div className="absolute -right-10 -top-10 w-40 h-40 bg-gold-500/20 rounded-full blur-[50px] group-hover:bg-gold-500/40 transition-colors" />
+              <div className="w-16 h-16 bg-gradient-to-br from-gold-400 to-amber-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg transform group-hover:scale-110 transition-transform">
+                <FaStar className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-serif text-3xl md:text-4xl font-bold mb-6 text-white group-hover:text-gold-300 transition-colors">The Mission</h3>
+              <p className="font-sans text-base md:text-lg text-beige-200/80 leading-relaxed">
                 To create a sanctuary that preserves, represents, and shares the traditional craftsmanship and lifestyle of royal Mewar, ensuring sustainable tourism while delivering high-quality hospitality.
               </p>
-            </div>
-            <div className="space-y-4">
-              <span className="text-gold-400 font-sans text-xs uppercase tracking-widest font-bold">The Vision</span>
-              <h3 className="font-serif text-2xl md:text-4xl font-semibold">Exemplifying Cultural Stays</h3>
-              <p className="font-sans text-sm md:text-base text-beige-200/80 leading-relaxed">
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white/5 backdrop-blur-xl rounded-[2.5rem] p-10 md:p-14 border border-white/10 hover:border-teal-400/30 transition-colors shadow-2xl relative overflow-hidden group mt-0 md:mt-12"
+            >
+              <div className="absolute -right-10 -top-10 w-40 h-40 bg-teal-400/20 rounded-full blur-[50px] group-hover:bg-teal-400/40 transition-colors" />
+              <div className="w-16 h-16 bg-gradient-to-br from-teal-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg transform group-hover:scale-110 transition-transform">
+                <FaEye className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-serif text-3xl md:text-4xl font-bold mb-6 text-white group-hover:text-teal-300 transition-colors">The Vision</h3>
+              <p className="font-sans text-base md:text-lg text-beige-200/80 leading-relaxed">
                 To be universally recognized as the prime boutique heritage resort in Udaipur, where traditional structure, authentic lakeside fine dining, and customized hospitality merge to offer lifetime experiences.
               </p>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="space-y-8">
-            <h4 className="text-center font-serif text-2xl font-bold text-gold-400 tracking-wide">
-              Our Hospitality Core Values
-            </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Core Values */}
+          <div className="space-y-12">
+            <div className="text-center space-y-4">
+              <span className="text-gold-400 font-sans text-sm uppercase tracking-widest font-bold">Our Pillars</span>
+              <h4 className="font-serif text-3xl md:text-5xl font-bold text-white">
+                Hospitality Core Values
+              </h4>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {[
-                { title: 'Authenticity First', desc: 'True Rajasthani recipes, actual handcarved sandstone arches, and local stories.' },
-                { title: 'Exquisite Quality', desc: 'Only fresh ingredients, high-grade linen, spotless room sanitization.' },
-                { title: 'Heartfelt Care', desc: 'Attending to every guest with personal care, smiling service, and warmth.' },
-                { title: 'Nature Serenity', desc: 'Minimizing local waste, respecting lake ecosystems, and promoting silence.' }
-              ].map((val) => (
-                <div key={val.title} className="p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
-                  <h5 className="font-serif text-lg font-bold text-gold-300 mb-2">{val.title}</h5>
-                  <p className="font-sans text-xs md:text-sm text-beige-200/70 leading-relaxed">{val.desc}</p>
-                </div>
+                { 
+                  title: 'Authenticity First', 
+                  desc: 'True Rajasthani recipes, handcarved arches, and local stories.', 
+                  icon: FaHistory, 
+                  color: 'from-amber-400 to-orange-500',
+                  staticBg: 'bg-amber-500/10',
+                  hoverBg: 'group-hover:bg-amber-500/20',
+                  staticBorder: 'border-amber-400/40',
+                  hoverBorder: 'hover:border-amber-400/70',
+                  iconColor: 'text-amber-400',
+                  hoverIconColor: 'group-hover:text-amber-300',
+                  titleColor: 'text-amber-300',
+                  hoverTitleColor: 'group-hover:text-amber-200'
+                },
+                { 
+                  title: 'Exquisite Quality', 
+                  desc: 'Fresh ingredients, high-grade linen, spotless room sanitization.', 
+                  icon: FaGem, 
+                  color: 'from-purple-400 to-indigo-500',
+                  staticBg: 'bg-purple-500/10',
+                  hoverBg: 'group-hover:bg-purple-500/20',
+                  staticBorder: 'border-purple-400/40',
+                  hoverBorder: 'hover:border-purple-400/70',
+                  iconColor: 'text-purple-400',
+                  hoverIconColor: 'group-hover:text-purple-300',
+                  titleColor: 'text-purple-300',
+                  hoverTitleColor: 'group-hover:text-purple-200'
+                },
+                { 
+                  title: 'Heartfelt Care', 
+                  desc: 'Attending to every guest with personal care, smiling service.', 
+                  icon: FaHeart, 
+                  color: 'from-rose-400 to-red-500',
+                  staticBg: 'bg-rose-500/10',
+                  hoverBg: 'group-hover:bg-rose-500/20',
+                  staticBorder: 'border-rose-400/40',
+                  hoverBorder: 'hover:border-rose-400/70',
+                  iconColor: 'text-rose-400',
+                  hoverIconColor: 'group-hover:text-rose-300',
+                  titleColor: 'text-rose-300',
+                  hoverTitleColor: 'group-hover:text-rose-200'
+                },
+                { 
+                  title: 'Nature Serenity', 
+                  desc: 'Minimizing local waste, respecting lake ecosystems, promoting silence.', 
+                  icon: FaLeaf, 
+                  color: 'from-emerald-400 to-teal-500',
+                  staticBg: 'bg-emerald-500/10',
+                  hoverBg: 'group-hover:bg-emerald-500/20',
+                  staticBorder: 'border-emerald-400/40',
+                  hoverBorder: 'hover:border-emerald-400/70',
+                  iconColor: 'text-emerald-400',
+                  hoverIconColor: 'group-hover:text-emerald-300',
+                  titleColor: 'text-emerald-300',
+                  hoverTitleColor: 'group-hover:text-emerald-200'
+                }
+              ].map((val, idx) => (
+                <motion.div 
+                  key={val.title}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  whileHover={{ y: -8 }}
+                  className={`group relative backdrop-blur-md p-8 rounded-3xl border ${val.staticBorder} ${val.hoverBorder} ${val.staticBg} ${val.hoverBg} transition-all duration-500 overflow-hidden shadow-lg hover:shadow-2xl`}
+                >
+                  {/* Glowing background blob static + hover */}
+                  <div className={`absolute -right-10 -bottom-10 w-32 h-32 bg-gradient-to-br ${val.color} opacity-20 group-hover:opacity-40 blur-2xl transition-opacity duration-500 pointer-events-none`} />
+                  
+                  {/* Top line static + hover */}
+                  <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${val.color} opacity-70 group-hover:opacity-100 transition-opacity duration-500`} />
+                  
+                  {/* Icon Container */}
+                  <div className={`relative z-10 w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors duration-500 shadow-inner`}>
+                    <val.icon className={`w-7 h-7 ${val.iconColor} ${val.hoverIconColor} transition-colors duration-500`} />
+                  </div>
+                  
+                  {/* Title */}
+                  <h5 className={`relative z-10 font-serif text-xl font-bold mb-3 ${val.titleColor} ${val.hoverTitleColor} transition-colors duration-500`}>
+                    {val.title}
+                  </h5>
+                  
+                  {/* Description */}
+                  <p className="relative z-10 font-sans text-sm text-beige-200/80 leading-relaxed group-hover:text-white transition-colors duration-500">
+                    {val.desc}
+                  </p>
+                </motion.div>
               ))}
             </div>
           </div>
