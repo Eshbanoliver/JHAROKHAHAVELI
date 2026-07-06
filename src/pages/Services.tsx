@@ -7,7 +7,11 @@ import {
   FaGem, 
   FaSpa, 
   FaTree, 
-  FaGift 
+  FaGift,
+  FaSwimmer,
+  FaCameraRetro,
+  FaGlassMartiniAlt,
+  FaConciergeBell
 } from 'react-icons/fa';
 import PageLayout from '../layouts/PageLayout';
 import SEO from '../components/SEO';
@@ -245,6 +249,86 @@ export default function Services() {
           >
             Book Resort Room
           </Link>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-6"><hr className="border-beige-200" /></div>
+
+      {/* 3. ADDITIONAL AMENITIES SECTION */}
+      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="text-center space-y-4 mb-16">
+          <span className="text-gold-600 font-sans text-xs md:text-sm uppercase tracking-widest font-bold block">
+            Beyond Expectation
+          </span>
+          <h2 className="font-serif text-3xl md:text-5xl font-semibold text-emerald-800 leading-tight">
+            More Premium Services
+          </h2>
+          <div className="w-16 h-[2px] bg-gold-400 mx-auto" />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              icon: FaSwimmer,
+              title: "Luxury Swimming Pool",
+              desc: "Relax in our pristine temperature-controlled pool overlooking the lake. Complete with loungers and poolside service.",
+              color: "text-blue-500",
+              bg: "bg-blue-50"
+            },
+            {
+              icon: FaSpa,
+              title: "Spa & Wellness",
+              desc: "Rejuvenate with traditional therapies and modern spa treatments in a peaceful, aromatic sanctuary.",
+              color: "text-rose-500",
+              bg: "bg-rose-50"
+            },
+            {
+              icon: FaCameraRetro,
+              title: "Curated City Tours",
+              desc: "Discover Udaipur with our expert guides. Customized itineraries covering palaces, lakes, and hidden gems.",
+              color: "text-amber-500",
+              bg: "bg-amber-50"
+            },
+            {
+              icon: FaConciergeBell,
+              title: "24/7 Concierge",
+              desc: "Our dedicated concierge team is always available to assist with bookings, transfers, and special requests.",
+              color: "text-emerald-500",
+              bg: "bg-emerald-50"
+            },
+            {
+              icon: FaGlassMartiniAlt,
+              title: "Private Events",
+              desc: "Host memorable engagements, intimate weddings, and exclusive gatherings in our heritage venues.",
+              color: "text-purple-500",
+              bg: "bg-purple-50"
+            },
+            {
+              icon: FaUtensils,
+              title: "In-Room Dining",
+              desc: "Enjoy our full restaurant menu in the privacy of your own suite, available around the clock.",
+              color: "text-teal-500",
+              bg: "bg-teal-50"
+            }
+          ].map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="p-8 rounded-3xl border border-beige-200 bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col group"
+            >
+              <div className={`w-14 h-14 rounded-2xl ${item.bg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                <item.icon className={`w-6 h-6 ${item.color}`} />
+              </div>
+              <h4 className="font-serif text-xl font-bold text-emerald-950 mb-3">{item.title}</h4>
+              <p className="font-sans text-sm text-dark-900/70 leading-relaxed flex-grow">
+                {item.desc}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </section>
     </PageLayout>
