@@ -161,36 +161,86 @@ export default function About() {
       </section>
 
       {/* Our Heritage & Hospitality */}
-      <section className="bg-beige-100/50 py-20 px-6 md:px-12 border-y border-beige-200">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-          <div className="space-y-4">
-            <div className="bg-white inline-block p-4 rounded-full shadow-sm text-gold-500 border border-beige-100">
-              <FaHistory className="w-8 h-8" />
-            </div>
-            <h3 className="font-serif text-xl font-bold text-emerald-950">Intricate Preservation</h3>
-            <p className="font-sans text-sm text-dark-900/70 leading-relaxed">
-              We focus on keeping old architectural designs safe. We avoid steel structures, keeping structural carvings intact.
-            </p>
+      <section className="relative py-24 px-6 md:px-12 overflow-hidden bg-slate-950 text-white">
+        {/* Vibrant animated background elements */}
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-600/30 rounded-full mix-blend-screen filter blur-[100px] animate-pulse" style={{ animationDuration: '4s' }} />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-rose-600/30 rounded-full mix-blend-screen filter blur-[100px] animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
+        <div className="absolute top-[30%] left-[30%] w-[40%] h-[40%] bg-amber-500/20 rounded-full mix-blend-screen filter blur-[120px] animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }} />
+        <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
+
+        <div className="relative z-10 max-w-7xl mx-auto space-y-16">
+          <div className="text-center space-y-4">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-rose-400 font-sans text-xs md:text-sm uppercase tracking-widest font-bold block">
+              The Jharokha Standard
+            </span>
+            <h2 className="font-serif text-4xl md:text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-white via-beige-100 to-white/70 leading-tight">
+              Our Heritage & Hospitality
+            </h2>
+            <div className="w-24 h-[3px] bg-gradient-to-r from-purple-500 via-rose-500 to-amber-500 mx-auto rounded-full" />
           </div>
 
-          <div className="space-y-4">
-            <div className="bg-white inline-block p-4 rounded-full shadow-sm text-gold-500 border border-beige-100">
-              <FaCrown className="w-8 h-8" />
-            </div>
-            <h3 className="font-serif text-xl font-bold text-emerald-950">Mewari Royal Cuisine</h3>
-            <p className="font-sans text-sm text-dark-900/70 leading-relaxed">
-              Our culinary team preserves original Royal Mewari recipes, keeping traditional flavors alive using local spices.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            <div className="bg-white inline-block p-4 rounded-full shadow-sm text-gold-500 border border-beige-100">
-              <FaAward className="w-8 h-8" />
-            </div>
-            <h3 className="font-serif text-xl font-bold text-emerald-950">Bespoke Hospitality</h3>
-            <p className="font-sans text-sm text-dark-900/70 leading-relaxed">
-              Every detail of your stay is customized—from private lake transfers to special requests, keeping you comfortable.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            {[
+              {
+                icon: FaHistory,
+                title: "Intricate Preservation",
+                desc: "We focus on keeping old architectural designs safe. We avoid steel structures, keeping structural carvings intact.",
+                glowColor: "from-rose-500/20 to-pink-600/20",
+                hoverGlow: "group-hover:from-rose-500/40 group-hover:to-pink-600/40",
+                borderColor: "border-rose-500/20",
+                hoverBorder: "group-hover:border-rose-400/60",
+                iconColor: "text-rose-400 group-hover:text-rose-300",
+                shadow: "group-hover:shadow-[0_0_40px_rgba(244,63,94,0.4)]"
+              },
+              {
+                icon: FaCrown,
+                title: "Mewari Royal Cuisine",
+                desc: "Our culinary team preserves original Royal Mewari recipes, keeping traditional flavors alive using local spices.",
+                glowColor: "from-amber-500/20 to-orange-600/20",
+                hoverGlow: "group-hover:from-amber-500/40 group-hover:to-orange-600/40",
+                borderColor: "border-amber-500/20",
+                hoverBorder: "group-hover:border-amber-400/60",
+                iconColor: "text-amber-400 group-hover:text-amber-300",
+                shadow: "group-hover:shadow-[0_0_40px_rgba(251,191,36,0.4)]"
+              },
+              {
+                icon: FaAward,
+                title: "Bespoke Hospitality",
+                desc: "Every detail of your stay is customized—from private lake transfers to special requests, keeping you comfortable.",
+                glowColor: "from-purple-500/20 to-indigo-600/20",
+                hoverGlow: "group-hover:from-purple-500/40 group-hover:to-indigo-600/40",
+                borderColor: "border-purple-500/20",
+                hoverBorder: "group-hover:border-purple-400/60",
+                iconColor: "text-purple-400 group-hover:text-purple-300",
+                shadow: "group-hover:shadow-[0_0_40px_rgba(168,85,247,0.4)]"
+              }
+            ].map((item, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.2 }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                className={`group relative bg-white/5 backdrop-blur-xl p-8 md:p-10 rounded-[2rem] border ${item.borderColor} ${item.hoverBorder} transition-all duration-500 shadow-2xl overflow-hidden flex flex-col items-center text-center space-y-6`}
+              >
+                {/* Glow effect on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.glowColor} ${item.hoverGlow} transition-colors duration-500`} />
+                
+                <div className="relative z-10">
+                  <div className={`w-20 h-20 mx-auto bg-black/30 rounded-full border border-white/10 flex items-center justify-center transition-all duration-500 ${item.shadow}`}>
+                    <item.icon className={`w-8 h-8 ${item.iconColor} transition-colors`} />
+                  </div>
+                </div>
+                
+                <div className="relative z-10 space-y-3">
+                  <h3 className="font-serif text-2xl font-bold text-white group-hover:text-white transition-colors">{item.title}</h3>
+                  <p className="font-sans text-sm text-white/70 leading-relaxed group-hover:text-white/90 transition-colors">
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
