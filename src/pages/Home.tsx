@@ -527,12 +527,11 @@ export default function Home() {
       </section>
 
       {/* 6. Core Values - Creative Section */}
-      <section className="relative py-28 px-6 md:px-12 bg-emerald-950 overflow-hidden border-t border-gold-900/30">
+      <section className="relative py-28 px-6 md:px-12 bg-beige-50 overflow-hidden border-t border-gold-200">
         {/* Animated Background Mesh */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-gold-600 rounded-full blur-[120px] mix-blend-overlay animate-pulse" />
-          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-500 rounded-full blur-[120px] mix-blend-overlay animate-pulse" style={{ animationDelay: '2s' }} />
-          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay pointer-events-none" />
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-gold-400 rounded-full blur-[120px] mix-blend-multiply animate-pulse" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-300 rounded-full blur-[120px] mix-blend-multiply animate-pulse" style={{ animationDelay: '2s' }} />
         </div>
 
         <div className="max-w-7xl mx-auto space-y-16 relative z-10">
@@ -543,10 +542,10 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center space-y-6 max-w-2xl mx-auto"
           >
-            <span className="inline-block px-5 py-2 rounded-full border border-gold-500/30 bg-gold-500/10 text-gold-400 font-sans text-xs md:text-sm uppercase tracking-widest font-bold backdrop-blur-sm">
+            <span className="inline-block px-5 py-2 rounded-full border border-emerald-900/20 bg-emerald-50 text-emerald-800 font-sans text-xs md:text-sm uppercase tracking-widest font-bold shadow-sm">
               Our Foundation
             </span>
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold text-white">
+            <h2 className="font-serif text-4xl md:text-5xl font-semibold text-emerald-950">
               Core Values We Cherish
             </h2>
           </motion.div>
@@ -558,13 +557,13 @@ export default function Home() {
                 title: 'Royal Heritage',
                 desc: 'Preserving authentic Rajasthani patterns, architectural carvings, and old city customs.',
                 theme: {
-                  glow: 'group-hover:from-rose-500/20 group-hover:to-transparent',
-                  iconBg: 'from-rose-500/20 to-rose-900/50',
-                  iconText: 'text-rose-400 group-hover:text-rose-300',
-                  border: 'border-rose-500/30 group-hover:border-rose-400',
-                  shadow: 'hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.3)]',
-                  titleHover: 'group-hover:text-rose-300',
-                  divider: 'bg-rose-500/30 group-hover:bg-rose-400',
+                  glow: 'group-hover:from-rose-500/10 group-hover:to-transparent',
+                  iconBg: 'from-rose-100 to-rose-200 border-rose-300/50',
+                  iconText: 'text-rose-600',
+                  border: 'border-white/60 group-hover:border-rose-300',
+                  shadow: 'shadow-lg hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.2)]',
+                  titleHover: 'text-emerald-950 group-hover:text-rose-600',
+                  divider: 'bg-rose-400/50 group-hover:bg-rose-500',
                 }
               },
               {
@@ -572,13 +571,13 @@ export default function Home() {
                 title: 'Uncompromised Quality',
                 desc: 'Delivering fresh culinary ingredients and spotless premium room sanitization.',
                 theme: {
-                  glow: 'group-hover:from-blue-500/20 group-hover:to-transparent',
-                  iconBg: 'from-blue-500/20 to-blue-900/50',
-                  iconText: 'text-blue-400 group-hover:text-blue-300',
-                  border: 'border-blue-500/30 group-hover:border-blue-400',
-                  shadow: 'hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.3)]',
-                  titleHover: 'group-hover:text-blue-300',
-                  divider: 'bg-blue-500/30 group-hover:bg-blue-400',
+                  glow: 'group-hover:from-blue-500/10 group-hover:to-transparent',
+                  iconBg: 'from-blue-100 to-blue-200 border-blue-300/50',
+                  iconText: 'text-blue-600',
+                  border: 'border-white/60 group-hover:border-blue-300',
+                  shadow: 'shadow-lg hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.2)]',
+                  titleHover: 'text-emerald-950 group-hover:text-blue-600',
+                  divider: 'bg-blue-400/50 group-hover:bg-blue-500',
                 }
               },
               {
@@ -586,13 +585,13 @@ export default function Home() {
                 title: 'Guest Centricity',
                 desc: 'Anticipating guest requirements and greeting everyone with warmth and care.',
                 theme: {
-                  glow: 'group-hover:from-purple-500/20 group-hover:to-transparent',
-                  iconBg: 'from-purple-500/20 to-purple-900/50',
-                  iconText: 'text-purple-400 group-hover:text-purple-300',
-                  border: 'border-purple-500/30 group-hover:border-purple-400',
-                  shadow: 'hover:shadow-[0_20px_40px_-15px_rgba(168,85,247,0.3)]',
-                  titleHover: 'group-hover:text-purple-300',
-                  divider: 'bg-purple-500/30 group-hover:bg-purple-400',
+                  glow: 'group-hover:from-purple-500/10 group-hover:to-transparent',
+                  iconBg: 'from-purple-100 to-purple-200 border-purple-300/50',
+                  iconText: 'text-purple-600',
+                  border: 'border-white/60 group-hover:border-purple-300',
+                  shadow: 'shadow-lg hover:shadow-[0_20px_40px_-15px_rgba(168,85,247,0.2)]',
+                  titleHover: 'text-emerald-950 group-hover:text-purple-600',
+                  divider: 'bg-purple-400/50 group-hover:bg-purple-500',
                 }
               },
               {
@@ -600,13 +599,13 @@ export default function Home() {
                 title: 'Serene Luxury',
                 desc: 'Creating an atmosphere of peace and relaxation away from daily noise.',
                 theme: {
-                  glow: 'group-hover:from-teal-500/20 group-hover:to-transparent',
-                  iconBg: 'from-teal-500/20 to-teal-900/50',
-                  iconText: 'text-teal-400 group-hover:text-teal-300',
-                  border: 'border-teal-500/30 group-hover:border-teal-400',
-                  shadow: 'hover:shadow-[0_20px_40px_-15px_rgba(20,184,166,0.3)]',
-                  titleHover: 'group-hover:text-teal-300',
-                  divider: 'bg-teal-500/30 group-hover:bg-teal-400',
+                  glow: 'group-hover:from-teal-500/10 group-hover:to-transparent',
+                  iconBg: 'from-teal-100 to-teal-200 border-teal-300/50',
+                  iconText: 'text-teal-600',
+                  border: 'border-white/60 group-hover:border-teal-300',
+                  shadow: 'shadow-lg hover:shadow-[0_20px_40px_-15px_rgba(20,184,166,0.2)]',
+                  titleHover: 'text-emerald-950 group-hover:text-teal-600',
+                  divider: 'bg-teal-400/50 group-hover:bg-teal-500',
                 }
               }
             ].map((value, idx) => (
@@ -616,22 +615,22 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.15, type: 'spring' }}
-                className={`group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col ${value.theme.shadow}`}
+                className={`group relative bg-white/70 backdrop-blur-xl border rounded-3xl p-8 hover:bg-white transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col ${value.theme.shadow} ${value.theme.border}`}
               >
                 {/* Glow effect on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br from-transparent to-transparent transition-all duration-500 ${value.theme.glow}`} />
                 
                 <div className="relative z-10 flex flex-col flex-grow">
-                  <div className={`w-16 h-16 mb-8 rounded-2xl bg-gradient-to-br border flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-inner ${value.theme.iconBg} ${value.theme.border}`}>
+                  <div className={`w-16 h-16 mb-8 rounded-2xl bg-gradient-to-br border flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-sm ${value.theme.iconBg}`}>
                     <value.icon className={`w-7 h-7 transition-colors ${value.theme.iconText}`} />
                   </div>
                   
-                  <h4 className={`font-serif text-2xl font-bold text-white mb-4 transition-colors ${value.theme.titleHover}`}>
+                  <h4 className={`font-serif text-2xl font-bold mb-4 transition-colors ${value.theme.titleHover}`}>
                     {value.title}
                   </h4>
                   <div className={`w-8 h-[2px] mb-5 group-hover:w-16 transition-all duration-500 ${value.theme.divider}`} />
                   
-                  <p className="font-sans text-sm text-beige-300/70 leading-relaxed font-light group-hover:text-beige-200/90 transition-colors mt-auto">
+                  <p className="font-sans text-sm text-dark-900/70 leading-relaxed font-light group-hover:text-dark-900 transition-colors mt-auto">
                     {value.desc}
                   </p>
                 </div>
@@ -643,10 +642,13 @@ export default function Home() {
 
       {/* 7. Why Choose Us - Creative Section */}
       <section className="relative py-32 px-6 md:px-12 bg-white overflow-hidden">
-        {/* Animated fluid shapes in background */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-fuchsia-500/5 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 translate-y-1/3" />
-        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
+        {/* Extremely Vibrant Background Blurs for Light Theme */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-fuchsia-300/40 rounded-full blur-[120px] mix-blend-multiply pointer-events-none translate-x-1/3 -translate-y-1/3 animate-pulse" style={{ animationDuration: '4s' }} />
+        <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-cyan-300/40 rounded-full blur-[120px] mix-blend-multiply pointer-events-none -translate-x-1/3 translate-y-1/3 animate-pulse" style={{ animationDuration: '6s', animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-amber-300/30 rounded-full blur-[120px] mix-blend-multiply pointer-events-none -translate-x-1/2 -translate-y-1/2 animate-pulse" style={{ animationDuration: '5s', animationDelay: '2s' }} />
+
+        {/* Decorative Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.5) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
         <div className="max-w-7xl mx-auto space-y-20 relative z-10">
           <motion.div 
@@ -656,11 +658,11 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center space-y-6 max-w-2xl mx-auto"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full border border-emerald-800/20 bg-emerald-50 text-emerald-800 font-sans text-xs uppercase tracking-widest font-bold shadow-sm">
+            <span className="inline-block px-6 py-2 rounded-full border border-emerald-900/20 bg-emerald-50 text-emerald-800 font-sans text-xs uppercase tracking-[0.3em] font-bold shadow-sm backdrop-blur-md">
               The Haveli Distinction
             </span>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-950 leading-tight">
-              Why Choose <span className="text-gold-600 italic font-light">Jharokha</span>
+              Why Choose Jharokha
             </h2>
           </motion.div>
 
@@ -671,12 +673,13 @@ export default function Home() {
                 title: 'Prime Lakeside Location',
                 desc: 'Steps away from Amrai Ghat and Chandpole. Panoramic views of historic city palaces directly from our decks.',
                 theme: {
-                  bg: 'bg-cyan-500/5 hover:bg-cyan-50',
-                  border: 'border-cyan-500/20 hover:border-cyan-400',
-                  iconBox: 'bg-gradient-to-br from-cyan-400 to-blue-600',
+                  bg: 'bg-white/60 hover:bg-white',
+                  border: 'border-cyan-200 hover:border-cyan-400',
+                  iconBox: 'bg-gradient-to-br from-cyan-400 to-blue-600 shadow-[0_10px_20px_rgba(6,182,212,0.3)]',
                   iconColor: 'text-white',
-                  title: 'group-hover:text-cyan-700',
-                  shadow: 'hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.3)]',
+                  title: 'text-emerald-950 group-hover:text-cyan-700',
+                  shadow: 'shadow-xl hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.3)]',
+                  line: 'bg-cyan-500'
                 }
               },
               {
@@ -684,12 +687,13 @@ export default function Home() {
                 title: 'Heritage Architecture',
                 desc: 'Authentic stone carvings, traditional archways, and window frame seating that captures Udaipur’s royal essence.',
                 theme: {
-                  bg: 'bg-fuchsia-500/5 hover:bg-fuchsia-50',
-                  border: 'border-fuchsia-500/20 hover:border-fuchsia-400',
-                  iconBox: 'bg-gradient-to-br from-fuchsia-400 to-purple-600',
+                  bg: 'bg-white/60 hover:bg-white',
+                  border: 'border-fuchsia-200 hover:border-fuchsia-400',
+                  iconBox: 'bg-gradient-to-br from-fuchsia-400 to-purple-600 shadow-[0_10px_20px_rgba(217,70,239,0.3)]',
                   iconColor: 'text-white',
-                  title: 'group-hover:text-fuchsia-700',
-                  shadow: 'hover:shadow-[0_20px_40px_-15px_rgba(217,70,239,0.3)]',
+                  title: 'text-emerald-950 group-hover:text-fuchsia-700',
+                  shadow: 'shadow-xl hover:shadow-[0_20px_40px_-15px_rgba(217,70,239,0.3)]',
+                  line: 'bg-fuchsia-500'
                 }
               },
               {
@@ -697,12 +701,13 @@ export default function Home() {
                 title: 'Award-Winning Gastronomy',
                 desc: 'Savor traditional recipes and modern flavors on our open terrace under the stars, looking at glowing lake waters.',
                 theme: {
-                  bg: 'bg-amber-500/5 hover:bg-amber-50',
-                  border: 'border-amber-500/20 hover:border-amber-400',
-                  iconBox: 'bg-gradient-to-br from-amber-400 to-orange-500',
+                  bg: 'bg-white/60 hover:bg-white',
+                  border: 'border-amber-200 hover:border-amber-400',
+                  iconBox: 'bg-gradient-to-br from-amber-400 to-orange-500 shadow-[0_10px_20px_rgba(245,158,11,0.3)]',
                   iconColor: 'text-white',
-                  title: 'group-hover:text-amber-700',
-                  shadow: 'hover:shadow-[0_20px_40px_-15px_rgba(245,158,11,0.3)]',
+                  title: 'text-emerald-950 group-hover:text-amber-700',
+                  shadow: 'shadow-xl hover:shadow-[0_20px_40px_-15px_rgba(245,158,11,0.3)]',
+                  line: 'bg-amber-500'
                 }
               }
             ].map((item, idx) => (
@@ -712,15 +717,16 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.2, type: 'spring' }}
-                className={`group relative rounded-[2rem] p-8 md:p-10 border transition-all duration-500 ${item.theme.bg} ${item.theme.border} ${item.theme.shadow} overflow-hidden backdrop-blur-sm flex flex-col`}
+                className={`group relative rounded-[2rem] p-8 md:p-10 border transition-all duration-500 ${item.theme.bg} ${item.theme.border} ${item.theme.shadow} overflow-hidden backdrop-blur-xl flex flex-col hover:-translate-y-3`}
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                {/* Top glow line */}
+                <div className={`absolute top-0 left-0 w-full h-1 ${item.theme.line} opacity-50 group-hover:opacity-100 transition-opacity duration-500`} />
                 
-                <div className={`w-20 h-20 mb-8 rounded-2xl ${item.theme.iconBox} shadow-lg flex items-center justify-center transform group-hover:-translate-y-2 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+                <div className={`w-20 h-20 mb-8 rounded-2xl ${item.theme.iconBox} flex items-center justify-center transform group-hover:-translate-y-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}>
                   <item.icon className={`w-10 h-10 ${item.theme.iconColor} drop-shadow-md`} />
                 </div>
                 
-                <h3 className={`font-serif text-2xl md:text-3xl font-bold text-emerald-950 mb-4 transition-colors duration-300 ${item.theme.title}`}>
+                <h3 className={`font-serif text-2xl md:text-3xl font-bold mb-4 transition-colors duration-300 ${item.theme.title}`}>
                   {item.title}
                 </h3>
                 
