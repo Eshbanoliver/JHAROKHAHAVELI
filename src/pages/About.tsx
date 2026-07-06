@@ -368,6 +368,108 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* Why Choose Us Section */}
+      <section className="relative py-24 px-6 md:px-12 bg-beige-50 overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gold-400/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/3" />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Left Content */}
+            <motion.div 
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8"
+            >
+              <div className="space-y-4">
+                <span className="inline-block py-1.5 px-4 rounded-full border border-emerald-900/20 bg-emerald-50 text-emerald-800 font-sans text-xs uppercase tracking-widest font-bold shadow-sm">
+                  The Haveli Difference
+                </span>
+                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-950 leading-tight">
+                  Why Choose <span className="text-gold-600 italic font-light">Us</span>
+                </h2>
+              </div>
+              
+              <p className="font-sans text-dark-900/70 text-lg leading-relaxed">
+                At Jharokha Haveli, we don't just offer a place to stay or eat; we offer a journey back in time. Our commitment to authentic Rajasthani heritage sets us apart.
+              </p>
+
+              <div className="space-y-6 pt-4">
+                {[
+                  { title: "Unmatched Lakeside Views", desc: "Wake up and dine to the serene and historic vistas of Udaipur's lakes.", icon: FaEye },
+                  { title: "Authentic Architecture", desc: "Stay in rooms carefully crafted with traditional stonework and arches.", icon: FaCrown },
+                  { title: "Personalized Royal Service", desc: "Experience the legendary 'Guest is God' hospitality from our dedicated team.", icon: FaHeart }
+                ].map((item, idx) => (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.15 }}
+                    className="flex gap-4 items-start"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-gold-100 flex items-center justify-center shrink-0 border border-gold-200 shadow-inner">
+                      <item.icon className="w-5 h-5 text-gold-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-serif text-xl font-bold text-emerald-950 mb-1">{item.title}</h4>
+                      <p className="font-sans text-sm text-dark-900/70">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right Photos */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative h-[500px] md:h-[600px] flex items-center justify-center"
+            >
+              <div className="absolute inset-0 bg-emerald-900/5 rounded-full blur-3xl" />
+              
+              <motion.div 
+                whileHover={{ scale: 1.05, zIndex: 30 }}
+                className="absolute z-10 w-[60%] h-[70%] left-0 top-0 rounded-[2rem] overflow-hidden border-4 border-white shadow-2xl transition-all duration-500"
+              >
+                <img src="/haveli_1.jpg" alt="Haveli Exterior" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+              </motion.div>
+
+              <motion.div 
+                whileHover={{ scale: 1.05, zIndex: 30 }}
+                className="absolute z-20 w-[55%] h-[65%] right-0 bottom-10 rounded-[2rem] overflow-hidden border-4 border-white shadow-2xl transition-all duration-500"
+              >
+                <img src="/haveli_7.jpg" alt="Haveli Interior" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="absolute z-30 -bottom-6 left-1/2 -translate-x-1/2 bg-white px-8 py-4 rounded-full shadow-xl border border-beige-200 flex items-center gap-3 whitespace-nowrap"
+              >
+                <div className="flex -space-x-2">
+                  <div className="w-8 h-8 rounded-full bg-gold-200 border-2 border-white" />
+                  <div className="w-8 h-8 rounded-full bg-emerald-200 border-2 border-white" />
+                  <div className="w-8 h-8 rounded-full bg-rose-200 border-2 border-white" />
+                </div>
+                <div className="font-sans text-sm font-bold text-emerald-950">
+                  Loved by 15k+ Guests
+                </div>
+              </motion.div>
+            </motion.div>
+            
+          </div>
+        </div>
+      </section>
     </PageLayout>
   );
 }
