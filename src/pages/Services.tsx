@@ -47,6 +47,7 @@ export default function Services() {
               src="/haveli_5.jpg" 
               alt="Luxury Hotel Room" 
               className="w-full h-full object-cover" 
+              loading="lazy"
             />
             {/* Absolute badge */}
             <div className="absolute bottom-6 left-6 bg-emerald-950/90 text-white backdrop-blur border border-gold-500/30 p-6 rounded-2xl max-w-xs space-y-1">
@@ -200,6 +201,7 @@ export default function Services() {
               src="/haveli_2.jpg" 
               alt="Lakeside Swimming Pool" 
               className="w-full h-full object-cover" 
+              loading="lazy"
             />
             {/* Absolute badge */}
             <div className="absolute bottom-6 right-6 bg-emerald-950/90 text-white backdrop-blur border border-gold-500/30 p-6 rounded-2xl max-w-xs space-y-1">
@@ -242,6 +244,7 @@ export default function Services() {
               src="/haveli_1.jpg" 
               alt="Heritage Resort Exterior" 
               className="w-full h-full object-cover" 
+              loading="lazy"
             />
             {/* Absolute badge */}
             <div className="absolute bottom-6 left-6 bg-emerald-950/90 text-white backdrop-blur border border-gold-500/30 p-6 rounded-2xl max-w-xs space-y-1">
@@ -395,6 +398,7 @@ export default function Services() {
               src="/haveli_3.jpg" 
               alt="Lakeside Fine Dining" 
               className="w-full h-full object-cover" 
+              loading="lazy"
             />
             {/* Absolute badge */}
             <div className="absolute bottom-6 right-6 bg-emerald-950/90 text-white backdrop-blur border border-gold-500/30 p-6 rounded-2xl max-w-xs space-y-1">
@@ -422,6 +426,7 @@ export default function Services() {
               src="/haveli_7.jpg" 
               alt="Historic Jharokha Haveli Architecture" 
               className="w-full h-full object-cover" 
+              loading="lazy"
             />
             {/* Absolute badge */}
             <div className="absolute bottom-6 left-6 bg-emerald-950/90 text-white backdrop-blur border border-gold-500/30 p-6 rounded-2xl max-w-xs space-y-1">

@@ -249,6 +249,7 @@ export default function Home() {
               src="/haveli_3.jpg" 
               alt="Luxury Dining Set" 
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
+              loading="lazy"
             />
           </div>
           <div className="col-span-4 row-span-6 relative overflow-hidden rounded-2xl shadow-lg">
@@ -256,6 +257,7 @@ export default function Home() {
               src="/haveli_5.jpg" 
               alt="Luxury suite" 
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
+              loading="lazy"
             />
           </div>
           <div className="col-span-4 row-span-6 bg-emerald-800 text-white rounded-2xl shadow-lg p-6 flex flex-col justify-between border border-emerald-700">
@@ -368,6 +370,7 @@ export default function Home() {
                     src="/haveli_3.jpg" 
                     alt="Fine Dining" 
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                    loading="lazy"
                   />
                   <div className="absolute bottom-4 left-4 z-20 flex items-center gap-3 bg-white/95 backdrop-blur-md px-5 py-2.5 rounded-full shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
                     <FaUtensils className="text-gold-500 w-4 h-4" />
@@ -422,6 +425,7 @@ export default function Home() {
                     src="/haveli_5.jpg" 
                     alt="Premium Suites" 
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                    loading="lazy"
                   />
                   <div className="absolute bottom-4 left-4 z-20 flex items-center gap-3 bg-white/95 backdrop-blur-md px-5 py-2.5 rounded-full shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
                     <FaBed className="text-gold-500 w-4 h-4" />
@@ -747,6 +751,7 @@ export default function Home() {
             src="/haveli_6.jpg" 
             alt="Haveli Background" 
             className="w-full h-full object-cover opacity-30 mix-blend-overlay"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-emerald-950 via-emerald-950/80 to-emerald-950" />
         </div>
@@ -863,6 +868,7 @@ export default function Home() {
                     src={testimonial.image} 
                     alt={testimonial.name} 
                     className="w-10 h-10 rounded-full object-cover border border-gold-200"
+                    loading="lazy"
                   />
                   <div>
                     <h4 className="font-serif text-sm font-bold text-emerald-950">

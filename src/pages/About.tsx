@@ -71,7 +71,7 @@ export default function About() {
               whileHover={{ scale: 1.02, rotate: 0 }}
               className="absolute z-10 w-[70%] h-[80%] right-0 top-0 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/80 bg-beige-100"
             >
-              <img src="/haveli_6.jpg" alt="Lakeside Palace" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+              <img src="/haveli_6.jpg" alt="Lakeside Palace" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" loading="lazy" />
             </motion.div>
 
             {/* Overlapping Image 1 */}
@@ -83,7 +83,7 @@ export default function About() {
               whileHover={{ scale: 1.05, rotate: 0, zIndex: 40 }}
               className="absolute z-20 w-[45%] h-[45%] left-0 bottom-[20%] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-4 border-white/90 bg-beige-100"
             >
-              <img src="/haveli_5.jpg" alt="Room Arches" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+              <img src="/haveli_5.jpg" alt="Room Arches" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" loading="lazy" />
             </motion.div>
 
             {/* Overlapping Image 2 */}
@@ -95,7 +95,7 @@ export default function About() {
               whileHover={{ scale: 1.05, rotate: 0, zIndex: 40 }}
               className="absolute z-30 w-[40%] h-[40%] right-[10%] bottom-0 rounded-[2rem] overflow-hidden shadow-xl border-4 border-white/90 bg-beige-100"
             >
-              <img src="/haveli_3.jpg" alt="Lakeside Dinner Table" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+              <img src="/haveli_3.jpg" alt="Lakeside Dinner Table" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" loading="lazy" />
             </motion.div>
 
             {/* Floating Glass Card 1 */}
@@ -440,14 +440,14 @@ export default function About() {
                 whileHover={{ scale: 1.05, zIndex: 30 }}
                 className="absolute z-10 w-[60%] h-[70%] left-0 top-0 rounded-[2rem] overflow-hidden border-4 border-white shadow-2xl transition-all duration-500"
               >
-                <img src="/haveli_1.jpg" alt="Haveli Exterior" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+                <img src="/haveli_1.jpg" alt="Haveli Exterior" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" loading="lazy" />
               </motion.div>
 
               <motion.div 
                 whileHover={{ scale: 1.05, zIndex: 30 }}
                 className="absolute z-20 w-[55%] h-[65%] right-0 bottom-10 rounded-[2rem] overflow-hidden border-4 border-white shadow-2xl transition-all duration-500"
               >
-                <img src="/haveli_7.jpg" alt="Haveli Interior" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+                <img src="/haveli_7.jpg" alt="Haveli Interior" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" loading="lazy" />
               </motion.div>
               
               <motion.div 
@@ -480,6 +480,7 @@ export default function About() {
             src="/haveli_6.jpg" 
             alt="Haveli Background" 
             className="w-full h-full object-cover opacity-30 mix-blend-overlay"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-emerald-950 via-emerald-950/80 to-emerald-950" />
         </div>

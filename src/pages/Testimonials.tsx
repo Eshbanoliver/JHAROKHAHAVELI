@@ -149,6 +149,7 @@ export default function Testimonials() {
                   src={t.image} 
                   alt={t.name} 
                   className="w-11 h-11 rounded-full object-cover border border-gold-200" 
+                  loading="lazy"
                 />
                 <div className="space-y-0.5">
                   <h4 className="font-serif text-sm font-bold text-emerald-950 flex items-center gap-1.5">
