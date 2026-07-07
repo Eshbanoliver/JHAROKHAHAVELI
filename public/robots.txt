@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jharokhahaveli.com/sitemap.xml
+Sitemap: https://cyan-ibex-756678.hostingersite.com/sitemap.xml
