@@ -11,14 +11,11 @@ export default function Footer() {
         {/* Brand Information */}
         <div className="space-y-6">
           <div className="flex items-center gap-3">
-            <svg 
-              className="w-8 h-8 text-gold-500 fill-current" 
-              viewBox="0 0 40 40"
-            >
-              <path d="M20,2 C23.5,6.5 25,9.5 28.5,12 C32,14.5 35,16 35,21 L35,36 C35,37 34,38 33,38 L7,38 C6,38 5,37 5,36 L5,21 C5,16 8,14.5 11.5,12 C15,9.5 16.5,6.5 20,2 Z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              <path d="M20,7 C21.5,10 22.5,12 25,13.5 C27.5,15 29,16.5 29,20 L29,34 L11,34 L11,20 C11,16.5 12.5,15 15,13.5 C17.5,12 18.5,10 20,7 Z" fill="currentColor" opacity="0.15" />
-              <rect x="17" y="18" width="6" height="8" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none" />
-            </svg>
+            <img 
+              src="/logo.png" 
+              alt="Jharokha Haveli Logo" 
+              className="w-10 h-10 rounded-full border border-gold-500/20 object-cover"
+            />
             <div className="flex flex-col">
               <span className="font-serif text-lg font-bold tracking-widest text-white leading-tight">
                 JHAROKHA

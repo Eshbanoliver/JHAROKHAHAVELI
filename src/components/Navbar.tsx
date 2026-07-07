@@ -55,22 +55,11 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            {/* Custom SVG Jharokha Arch Logo */}
-            <svg 
-              className="w-10 h-10 text-gold-500 fill-current group-hover:scale-105 transition-transform duration-500" 
-              viewBox="0 0 40 40"
-              aria-hidden="true"
-            >
-              {/* Outer Rajasthani Arch Profile */}
-              <path d="M20,2 C23.5,6.5 25,9.5 28.5,12 C32,14.5 35,16 35,21 L35,36 C35,37 34,38 33,38 L7,38 C6,38 5,37 5,36 L5,21 C5,16 8,14.5 11.5,12 C15,9.5 16.5,6.5 20,2 Z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              {/* Inner Arch Scallops */}
-              <path d="M20,7 C21.5,10 22.5,12 25,13.5 C27.5,15 29,16.5 29,20 L29,34 L11,34 L11,20 C11,16.5 12.5,15 15,13.5 C17.5,12 18.5,10 20,7 Z" fill="currentColor" opacity="0.15" />
-              <path d="M20,7 C21.5,10 22.5,12 25,13.5 C27.5,15 29,16.5 29,20 L29,34 M11,34 L11,20 C11,16.5 12.5,15 15,13.5 C17.5,12 18.5,10 20,7" fill="none" stroke="currentColor" strokeWidth="1.5" />
-              {/* Center Jharokha Window Panes */}
-              <rect x="17" y="18" width="6" height="8" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none" />
-              <line x1="20" y1="18" x2="20" y2="26" stroke="currentColor" strokeWidth="1" />
-              <line x1="17" y1="22" x2="23" y2="22" stroke="currentColor" strokeWidth="1" />
-            </svg>
+            <img 
+              src="/logo.png" 
+              alt="Jharokha Haveli Logo" 
+              className="w-12 h-12 rounded-full border border-gold-500/35 group-hover:scale-105 transition-transform duration-500 object-cover shadow-[0_2px_10px_rgba(212,175,55,0.15)]"
+            />
             <div className="flex flex-col">
               <span className={`font-serif text-xl md:text-2xl font-bold tracking-widest leading-tight transition-colors duration-300 ${isScrolled ? 'text-emerald-800' : 'text-white'}`}>
                 JHAROKHA
@@ -145,12 +134,19 @@ export default function Navbar() {
               <div>
                 <div className="flex justify-between items-center mb-12">
                   <div className="flex items-center gap-2">
-                    <span className="font-serif text-lg font-bold tracking-widest text-emerald-800">
-                      JHAROKHA
-                    </span>
-                    <span className="font-sans text-[10px] uppercase tracking-widest text-gold-600 font-bold">
-                      HAVELI
-                    </span>
+                    <img 
+                      src="/logo.png" 
+                      alt="Jharokha Haveli Logo" 
+                      className="w-8 h-8 rounded-full border border-gold-500/20 object-cover"
+                    />
+                    <div className="flex flex-col">
+                      <span className="font-serif text-sm font-bold tracking-widest text-emerald-800 leading-tight">
+                        JHAROKHA
+                      </span>
+                      <span className="font-sans text-[8px] uppercase tracking-[0.2em] text-gold-600 font-bold leading-none">
+                        HAVELI
+                      </span>
+                    </div>
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}

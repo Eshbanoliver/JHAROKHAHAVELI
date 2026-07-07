@@ -22,13 +22,12 @@ function PageLoader() {
       <div className="relative flex items-center justify-center">
         {/* Outer spinning ring */}
         <div className="h-16 w-16 animate-spin rounded-full border-2 border-beige-300 border-t-gold-500" />
-        {/* Inner static luxury arch icon */}
-        <svg 
-          className="absolute w-6 h-6 text-gold-500 fill-current" 
-          viewBox="0 0 40 40"
-        >
-          <path d="M20,2 C23.5,6.5 25,9.5 28.5,12 C32,14.5 35,16 35,21 L35,36 C35,37 34,38 33,38 L7,38 C6,38 5,37 5,36 L5,21 C5,16 8,14.5 11.5,12 C15,9.5 16.5,6.5 20,2 Z" fill="none" stroke="currentColor" strokeWidth="2.5" />
-        </svg>
+        {/* Inner static luxury logo */}
+        <img 
+          src="/logo.png" 
+          alt="Jharokha Haveli Logo" 
+          className="absolute w-10 h-10 rounded-full object-cover border border-gold-500/25 shadow-md"
+        />
       </div>
       <span className="mt-4 font-serif text-sm uppercase tracking-[0.25em] text-emerald-950 font-bold animate-pulse">
         Jharokha Haveli
