@@ -82,12 +82,16 @@ export default function Footer() {
           </h3>
           <ul className="space-y-3 text-sm text-beige-300/80">
             <li>
-              <Link to="/services" className="hover:text-gold-400 transition-colors duration-300 font-medium text-gold-500">1. Restaurant</Link>
-              <p className="text-[12px] text-beige-400/70 mt-1 pl-4">Scenic fine dining, authentic Rajasthani cuisine, & ambient family spaces.</p>
+              <Link to="/services" className="hover:text-gold-400 transition-colors duration-300 font-medium text-gold-500">1. Hotel Rooms & Resort</Link>
+              <p className="text-[12px] text-beige-400/70 mt-1 pl-4">Premium luxury suites, quiet courtyards, and warm Mewari hospitality.</p>
             </li>
             <li>
-              <Link to="/services" className="hover:text-gold-400 transition-colors duration-300 font-medium text-gold-500">2. Resort</Link>
-              <p className="text-[12px] text-beige-400/70 mt-1 pl-4">Premium luxury suites, nature experiences, and serene family vacations.</p>
+              <Link to="/services" className="hover:text-gold-400 transition-colors duration-300 font-medium text-gold-500">2. Dining Hall</Link>
+              <p className="text-[12px] text-beige-400/70 mt-1 pl-4">Scenic lakeside dining decks, local Mewari spices, and gourmet multi-cuisine.</p>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-gold-400 transition-colors duration-300 font-medium text-gold-500">3. Pool & Heritage Place</Link>
+              <p className="text-[12px] text-beige-400/70 mt-1 pl-4">Lakeside swimming pool, historic stone carvings, and traditional architecture.</p>
             </li>
           </ul>
         </div>
