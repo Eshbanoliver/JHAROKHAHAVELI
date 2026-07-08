@@ -66,7 +66,7 @@ export default function FloatingButtons() {
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0 pointer-events-none'
         }`}
       >
-        <svg className="absolute h-full w-full -rotate-90">
+        <svg viewBox="0 0 56 56" className="absolute h-full w-full -rotate-90">
           <circle
             cx="28"
             cy="28"
