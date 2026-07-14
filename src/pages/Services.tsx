@@ -198,7 +198,7 @@ export default function Services() {
             className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-beige-200 lg:order-1"
           >
             <img 
-              src="/haveli_2.jpg" 
+              src="/swimming_pool.jpeg" 
               alt="Lakeside Swimming Pool" 
               className="w-full h-full object-cover" 
               loading="lazy"
